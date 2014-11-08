@@ -50,3 +50,46 @@ function decodeCaesar(str,shift){
 **You can do much better by merging the two functions into one.**
 
 
+#A simple Vignere, or polyalphabet, Cipher:
+
+The Vignere Cipher extends the Caesar Cipher by using a repeating keyword, where each letter sets the shift.
+
+```javascript
+yourPhrase = "THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG";
+key        = "ARDVAAK";
+
+secret = encodeVignere(yourPhrase, key);
+$('body').append(secret); 
+
+function encodeVignere(str){
+    /**
+     *  Encode the Vignere Cipher
+     *  by shifting each character in yourPhrase
+     *  by the corresponding character in the 
+     *  repeating key
+    */
+    var ret = '';
+    var phraseIndex = 0;
+    var keyIndex    = 0;
+
+    while (phraseIndex < str.length) {
+        // we want A as the first letter of the alphabet,
+        // A is ASCII 65, so subtract 65 from each charCodeAt in the key
+        ret += String.fromCharCode(str.charCodeAt(phraseIndex) + key.charCodeAt(keyIndex) - 65);
+        
+        phraseIndex++;
+        keyIndex++;
+    
+        if (keyIndex == key.length ){
+            keyIndex = 0;
+        }  
+    }
+    return ret;
+    
+}
+```
+
+**the Caesar implementation could be improved, and the decode functionality needs to be added**
+
+
+
