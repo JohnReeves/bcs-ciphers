@@ -29,7 +29,24 @@ function encodeCaesar(str,shift){
     }
     return ret;
 }
+
+//encoding and decoding are just opposites**
+function decodeCaesar(str,shift){
+    /**
+     *  Decode the Caesar Cipher
+     *  by shifting each character
+     *  back again by the same amount
+    */
+    var ret = '';
+    var i   = 0;
+
+    while (i < str.length) {
+        ret += String.fromCharCode(str.charCodeAt(i) - shift);
+        i   += 1;
+    }
+    return ret;
+}
 ```
-**encoding and decoding are just opposites**
+**You can do much better by merging the two functions into one.**
 
 
