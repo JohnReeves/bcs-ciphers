@@ -50,20 +50,20 @@ function decodeCaesar(str,shift){
 **You can do much better by merging the two functions into one.**
 
 
-#A simple Vignere, or polyalphabet, Cipher:
+#A simple Vigenere, or polyalphabet, Cipher:
 
-The Vignere Cipher extends the Caesar Cipher by using a repeating keyword, where each letter sets the shift.
+The Vigenere Cipher extends the Caesar Cipher by using a repeating keyword, where each letter sets the shift.
 
 ```javascript
 yourPhrase = "THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG";
 key        = "ARDVAAK";
 
-secret = encodeVignere(yourPhrase, key);
+secret = encodeVigenere(yourPhrase, key);
 $('body').append(secret); 
 
-function encodeVignere(str){
+function encodeVigenere(str){
     /**
-     *  Encode the Vignere Cipher
+     *  Encode the Vigenere Cipher
      *  by shifting each character in yourPhrase
      *  by the corresponding character in the 
      *  repeating key
