@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>bcs-ciphers by JohnReeves</title>
+    <title>Bcs-ciphers by JohnReeves</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -13,13 +13,17 @@
     <section class="page-header">
       <h1 class="project-name">Bcs-ciphers</h1>
       <h2 class="project-tagline">Minimal cipher functions in javascript for digital makers at beechen cliff</h2>
+      <a href="https://github.com/JohnReeves/bcs-ciphers" class="btn">View on GitHub</a>
+      <a href="https://github.com/JohnReeves/bcs-ciphers/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/JohnReeves/bcs-ciphers/tarball/master" class="btn">Download .tar.gz</a>
     </section>
 
     <section class="main-content">
-
+      <h1>
 <a id="a-simple-caesar-or-shift-cipher" class="anchor" href="#a-simple-caesar-or-shift-cipher" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>A simple Caesar, or shift, Cipher:</h1>
 
-<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> yourname <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Chuck Norris<span class="pl-pds">"</span></span>;
+<div class="highlight highlight-source-js"><pre><span class="pl-k">&lt;</span><span class="pl-k">?</span>prettify <span class="pl-k">...</span><span class="pl-k">?</span><span class="pl-k">&gt;</span>
+<span class="pl-k">var</span> yourname <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Chuck Norris<span class="pl-pds">"</span></span>;
 <span class="pl-k">var</span> shift    <span class="pl-k">=</span> <span class="pl-c1">5</span>;
 
 secret    <span class="pl-k">=</span> <span class="pl-en">encodeCaesar</span>(yourname, shift);
@@ -63,7 +67,7 @@ notsecret <span class="pl-k">=</span> <span class="pl-en">decodeCaesar</span>(se
 <p><strong>You can do much better by merging the two functions into one.</strong></p>
 
 <h1>
-<a id="a-simple-vignere-or-polyalphabet-cipher" class="anchor" href="#a-simple-vignere-or-polyalphabet-cipher" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>A simple Vigenere, or polyalphabet, Cipher:</h1>
+<a id="a-simple-vigenere-or-polyalphabet-cipher" class="anchor" href="#a-simple-vigenere-or-polyalphabet-cipher" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>A simple Vigenere, or polyalphabet, Cipher:</h1>
 
 <p>The Vigenere Cipher extends the Caesar Cipher by using a repeating keyword, where each letter sets the shift.</p>
 
@@ -101,6 +105,92 @@ secret <span class="pl-k">=</span> <span class="pl-en">encodeVigenere</span>(you
 }</pre></div>
 
 <p><strong>the Caesar implementation could be improved, and the decode functionality needs to be added</strong></p>
+
+<div class="highlight highlight-source-python"><pre><span class="pl-c">#bcs-ciphers</span>
+<span class="pl-c">#===========</span>
+<span class="pl-c">#</span>
+<span class="pl-c">#Minimal cipher functions in python for digital makers at beechen cliff</span>
+<span class="pl-c">#</span>
+<span class="pl-c">#A simple Caesar, or shift, Cipher:</span>
+
+<span class="pl-k">def</span> <span class="pl-en">encodeCaesar</span>(<span class="pl-smi">str</span>,<span class="pl-smi">shift</span>):
+    <span class="pl-s"><span class="pl-pds">"""</span></span>
+<span class="pl-s">     *  Encode the Caesar Cipher</span>
+<span class="pl-s">     *  by shifting each character</span>
+<span class="pl-s">     *  by a fixed amount</span>
+<span class="pl-s">    <span class="pl-pds">"""</span></span>
+    ret <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>
+
+    <span class="pl-k">for</span> letter <span class="pl-k">in</span> <span class="pl-c1">str</span>:
+        ret <span class="pl-k">+=</span> <span class="pl-c1">chr</span>(<span class="pl-c1">ord</span>(letter)<span class="pl-k">+</span>shift)
+
+    <span class="pl-k">return</span> ret
+
+
+<span class="pl-c">#encoding and decoding are just opposites**</span>
+<span class="pl-k">def</span> <span class="pl-en">decodeCaesar</span>(<span class="pl-smi">str</span>,<span class="pl-smi">shift</span>):
+    <span class="pl-s"><span class="pl-pds">"""</span></span>
+<span class="pl-s">     *  Decode the Caesar Cipher</span>
+<span class="pl-s">     *  by shifting each character</span>
+<span class="pl-s">     *  back again by the same amount</span>
+<span class="pl-s">    <span class="pl-pds">"""</span></span>
+    ret <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>
+
+    <span class="pl-k">for</span> letter <span class="pl-k">in</span> <span class="pl-c1">str</span>:
+        ret <span class="pl-k">+=</span> <span class="pl-c1">chr</span>(<span class="pl-c1">ord</span>(letter)<span class="pl-k">-</span>shift)
+
+    <span class="pl-k">return</span> ret
+
+<span class="pl-c">#You can do much better by merging the two functions into one.</span>
+
+
+<span class="pl-c">#A simple Vigenere, or polyalphabet, Cipher:</span>
+<span class="pl-c">#</span>
+<span class="pl-c">#The Vigenere Cipher extends the Caesar Cipher by using a repeating keyword, </span>
+<span class="pl-c">#where each letter sets the shift.</span>
+<span class="pl-c">#</span>
+
+<span class="pl-k">def</span> <span class="pl-en">encodeVigenere</span>(<span class="pl-smi">str</span>,<span class="pl-smi">key</span>):
+    <span class="pl-s"><span class="pl-pds">"""</span></span>
+<span class="pl-s">     *  Encode the Vigenere Cipher</span>
+<span class="pl-s">     *  by shifting each character in yourPhrase</span>
+<span class="pl-s">     *  by the corresponding character in the </span>
+<span class="pl-s">     *  repeating key</span>
+<span class="pl-s">    <span class="pl-pds">"""</span></span>
+    ret <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>
+    i<span class="pl-k">=</span><span class="pl-c1">0</span>
+
+    <span class="pl-k">for</span> letter <span class="pl-k">in</span> <span class="pl-c1">str</span>:
+        <span class="pl-c"># we want A as the first letter of the alphabet,</span>
+        <span class="pl-c"># A is ASCII 65, so subtract 65 from each charCodeAt in the key</span>
+
+        ret <span class="pl-k">+=</span> <span class="pl-c1">chr</span>(<span class="pl-c1">ord</span>(letter)<span class="pl-k">+</span><span class="pl-c1">ord</span>(key[i])<span class="pl-k">-</span><span class="pl-c1">64</span>)
+        <span class="pl-k">if</span> i<span class="pl-k">&lt;</span><span class="pl-c1">len</span>(key)<span class="pl-k">-</span><span class="pl-c1">1</span>:
+            i<span class="pl-k">+=</span><span class="pl-c1">1</span>
+        <span class="pl-k">else</span>:
+            i<span class="pl-k">=</span><span class="pl-c1">0</span>
+
+    <span class="pl-k">return</span> ret
+
+
+<span class="pl-c">#the Caesar implementation could be improved, and the decode functionality needs to be added</span>
+
+<span class="pl-c">#caesar testing</span>
+yourname <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Chuck Norris<span class="pl-pds">"</span></span>
+shift    <span class="pl-k">=</span> <span class="pl-c1">1</span>
+
+secret    <span class="pl-k">=</span> encodeCaesar(yourname, shift)
+notsecret <span class="pl-k">=</span> decodeCaesar(secret,   shift)
+
+<span class="pl-c1">print</span> secret <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> is <span class="pl-pds">"</span></span> <span class="pl-k">+</span> notsecret  
+
+
+<span class="pl-c"># vigenere testing</span>
+yourPhrase <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG<span class="pl-pds">"</span></span>
+key        <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>ARDVAAK<span class="pl-pds">"</span></span>
+
+secret <span class="pl-k">=</span> encodeVigenere(yourPhrase, key)
+<span class="pl-c1">print</span> yourPhrase <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> is <span class="pl-pds">"</span></span> <span class="pl-k">+</span> secret  </pre></div>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/JohnReeves/bcs-ciphers">Bcs-ciphers</a> is maintained by <a href="https://github.com/JohnReeves">JohnReeves</a>.</span>
