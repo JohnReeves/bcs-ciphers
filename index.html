@@ -1,5 +1,16 @@
 
-#A simple Caesar, or shift, Cipher:
+#1. simple Caesar, or shift, Cipher:
+
+The Caesar Cipher encodes a word by changing each letter by a fixed amount in the alphabet.
+
+Apparently it was used by the Romans to send secret messages, and probably only worked at 
+a time when most people didn't read or if you can't speak Latin!
+
+It's a easy place to start with ciphers, and you can program it in JavaScript or Python.
+
+## JavaScript version
+
+JavaScript is fun 'cos you can put it in a webpage, and make you own cypher challenge!
 
 ```javascript
 <?prettify ...?>
@@ -46,48 +57,9 @@ function decodeCaesar(str,shift){
 ```
 **You can do much better by merging the two functions into one.**
 
+## Python version
 
-#A simple Vigenere, or polyalphabet, Cipher:
-
-The Vigenere Cipher extends the Caesar Cipher by using a repeating keyword, where each letter sets the shift.
-
-```javascript
-yourPhrase = "THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG";
-key        = "ARDVAAK";
-
-secret = encodeVigenere(yourPhrase, key);
-$('body').append(secret); 
-
-function encodeVigenere(str){
-    /**
-     *  Encode the Vigenere Cipher
-     *  by shifting each character in yourPhrase
-     *  by the corresponding character in the 
-     *  repeating key
-    */
-    var ret = '';
-    var phraseIndex = 0;
-    var keyIndex    = 0;
-
-    while (phraseIndex < str.length) {
-        // we want A as the first letter of the alphabet,
-        // A is ASCII 65, so subtract 65 from each charCodeAt in the key
-        ret += String.fromCharCode(str.charCodeAt(phraseIndex) + key.charCodeAt(keyIndex) - 65);
-        
-        phraseIndex++;
-        keyIndex++;
-    
-        if (keyIndex == key.length ){
-            keyIndex = 0;
-        }  
-    }
-    return ret;
-    
-}
-```
-
-**the Caesar implementation could be improved, and the decode functionality needs to be added**
-
+JavaScript is fun 'cos you can put it in a webpage, and make you own cypher challenge!
 
 ```python
 #bcs-ciphers
@@ -125,9 +97,52 @@ def decodeCaesar(str,shift):
     
     return ret
 
-#You can do much better by merging the two functions into one.
+# Again, you can do much better by merging the two functions into one.
 
+# 2. simple Vigenere, or polyalphabet, Cipher:
 
+The Vigenere Cipher extends the Caesar Cipher by using a repeating keyword, where each letter sets the shift.
+
+## JavaScript version
+
+```javascript
+yourPhrase = "THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG";
+key        = "ARDVAAK";
+
+secret = encodeVigenere(yourPhrase, key);
+$('body').append(secret); 
+
+function encodeVigenere(str){
+    /**
+     *  Encode the Vigenere Cipher
+     *  by shifting each character in yourPhrase
+     *  by the corresponding character in the 
+     *  repeating key
+    */
+    var ret = '';
+    var phraseIndex = 0;
+    var keyIndex    = 0;
+
+    while (phraseIndex < str.length) {
+        // we want A as the first letter of the alphabet,
+        // A is ASCII 65, so subtract 65 from each charCodeAt in the key
+        ret += String.fromCharCode(str.charCodeAt(phraseIndex) + key.charCodeAt(keyIndex) - 65);
+        
+        phraseIndex++;
+        keyIndex++;
+    
+        if (keyIndex == key.length ){
+            keyIndex = 0;
+        }  
+    }
+    return ret;
+    
+}
+```
+
+## JavaScript version
+
+```python
 #A simple Vigenere, or polyalphabet, Cipher:
 #
 #The Vigenere Cipher extends the Caesar Cipher by using a repeating keyword, 
@@ -157,7 +172,7 @@ def encodeVigenere(str,key):
     return ret
 
 
-#the Caesar implementation could be improved, and the decode functionality needs to be added
+# the Viginere implementation could be improved, and the decode functionality needs to be added
 
 #caesar testing
 yourname = "Chuck Norris"
