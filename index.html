@@ -8,12 +8,13 @@ a time when most people didn't read or if you can't speak Latin!
 
 It's a easy place to start with ciphers, and you can program it in JavaScript or Python.
 
+Encoding and decoding are just opposites.
+
 ## JavaScript version
 
 JavaScript is fun 'cos you can put it in a webpage, and make you own cypher challenge!
 
 ```javascript
-<?prettify ...?>
 var yourname = "Chuck Norris";
 var shift    = 5;
 
@@ -24,9 +25,8 @@ $('body').append(" <p> " + secret + "<i> is <i> <b> " + notsecret + " <b> " );
 
 function encodeCaesar(str,shift){
     /**
-     *  Encode the Caesar Cipher
-     *  by shifting each character
-     *  by a fixed amount
+     *  Encode the Caesar Cipher by shifting
+     *   each character by a fixed amount 
     */
     var ret = '';
     var i   = 0;
@@ -38,12 +38,11 @@ function encodeCaesar(str,shift){
     return ret;
 }
 
-//encoding and decoding are just opposites**
 function decodeCaesar(str,shift){
     /**
-     *  Decode the Caesar Cipher
-     *  by shifting each character
-     *  back again by the same amount
+     *  Decode the Caesar Cipher by shifting
+     *  by shifting each character back again
+     *  by the same amount
     */
     var ret = '';
     var i   = 0;
@@ -59,21 +58,12 @@ function decodeCaesar(str,shift){
 
 ## Python version
 
-JavaScript is fun 'cos you can put it in a webpage, and make you own cypher challenge!
+Python is fun 'cos the code is much shorter!
 
 ```python
-#bcs-ciphers
-#===========
-#
-#Minimal cipher functions in python for digital makers at beechen cliff
-#
-#A simple Caesar, or shift, Cipher:
-
 def encodeCaesar(str,shift):
-    """
-     *  Encode the Caesar Cipher
-     *  by shifting each character
-     *  by a fixed amount
+    """Encode the Caesar Cipher by shifting
+       each character by a fixed amount 
     """
     ret = ''
 
@@ -82,13 +72,10 @@ def encodeCaesar(str,shift):
     
     return ret
 
-
-#encoding and decoding are just opposites**
 def decodeCaesar(str,shift):
-    """
-     *  Decode the Caesar Cipher
-     *  by shifting each character
-     *  back again by the same amount
+    """Decode the Caesar Cipher by shifting
+       by shifting each character back again
+       by the same amount
     """
     ret = ''
 
@@ -96,8 +83,9 @@ def decodeCaesar(str,shift):
         ret += chr(ord(letter)-shift)
     
     return ret
+```
 
-# Again, you can do much better by merging the two functions into one.
+**You can do much better by merging the two functions into one.**
 
 # 2. simple Vigenere, or polyalphabet, Cipher:
 
@@ -138,17 +126,19 @@ function encodeVigenere(str){
     return ret;
     
 }
+
+yourname = "Chuck Norris"
+shift    = 1
+
+secret    = encodeCaesar(yourname, shift)
+notsecret = decodeCaesar(secret,   shift)
+
+print secret + " is " + notsecret
 ```
 
-## JavaScript version
+## Python version
 
 ```python
-#A simple Vigenere, or polyalphabet, Cipher:
-#
-#The Vigenere Cipher extends the Caesar Cipher by using a repeating keyword, 
-#where each letter sets the shift.
-#
-
 def encodeVigenere(str,key):
     """
      *  Encode the Vigenere Cipher
@@ -171,24 +161,13 @@ def encodeVigenere(str,key):
 
     return ret
 
-
-# the Viginere implementation could be improved, and the decode functionality needs to be added
-
-#caesar testing
-yourname = "Chuck Norris"
-shift    = 1
-
-secret    = encodeCaesar(yourname, shift)
-notsecret = decodeCaesar(secret,   shift)
-
-print secret + " is " + notsecret  
-
-
-# vigenere testing
 yourPhrase = "THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG"
 key        = "ARDVAAK"
 
 secret = encodeVigenere(yourPhrase, key)
 print yourPhrase + " is " + secret  
 ```
+
+**the Viginere implementation could be improved, and the decode functionality needs to be added.**
+
 
