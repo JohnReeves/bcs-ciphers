@@ -1,4 +1,36 @@
 
+# Ciphers
+ 
+Cipher means secret in Classical Greek and Latin.
+ 
+Cipher can also be spelt with a ‘y’, as ‘cypher’, this is because the ‘ie’ sound was 
+written with the greek letter upsilon that looks like a ‘y’ which didn’t exist in the Latin alphabet.
+ 
+People in the olden days who had secrets were generally well educated people who could write in Latin and Greek.
+ 
+A good place to start with ciphers are:
+ 
+Caesar Cipher – a simple shift cipher
+Vigener Cipher – shifting with a key word
+Book Cipher – shifting with an unknown alphabet
+ 
+Encoding your message is easy, the idea with enciphering, is to make is hard to decode.
+ 
+The Caesar is the easiest to decode, with only 26 possibilities for your decoded phrase – 
+the number of letters in the alphabet.
+ 
+The Vigener Cipher is immediately very much harder, because you have to find the key word, 
+which could be any length.
+ 
+Imagine how much harder the messages are to decode, if you have also to find the alphabet *and* the keyword.
+ 
+And now imagine if you can, the difficulties if you have to find a randomised mathematical function 
+hat is shuffling everything too.
+ 
+This is when solving cypher puzzles become an art!
+ 
+
+
 #1. simple Caesar, or shift, Cipher:
 
 The Caesar Cipher encodes a word by changing each letter by a fixed amount in the alphabet.
@@ -86,6 +118,50 @@ def decodeCaesar(str,shift):
 ```
 
 **You can do much better by merging the two functions into one.**
+    
+
+ To make sure you only shift against alphabetic letters, you can include the alphabet in your program.
+ 
+```python
+alphabet="abcdefghijklmnopqrstuvwzyz"
+shift = alphabet.index('q')
+wrap = len(alphabet)
+ 
+def encode(name, shift):
+   encoded = ''
+   for letter in name:
+                encoded += alphabet[ ( alphabet.index(letter) + shift ) % wrap ]
+   return encoded
+ 
+def decode(name, shift):
+   encoded = ''
+   for letter in name:
+                encoded += alphabet[ ( alphabet.index(letter) - shift ) % wrap ]
+   return encoded
+```
+ 
+This is what the alphabet will look like
+ 
+```python
+for n in alphabet:
+   coded = encode(alphabet, alphabet.index(n))
+   print n, decode(coded, alphabet.index(n))
+```
+ 
+and your name will look like this
+ 
+```python
+name = "chuck norris"
+ 
+coded_name = encode(name, shift)
+decoded_name = decode(coded_name, shift)
+ 
+print "hello,your name shifted by {0} is {1}".format( shift, coded_name )
+print "and your real name is ", decoded_name
+```
+ 
+## To make you encoding even harder to crack, you could also make your alphabet random.
+ 
 
 # 2. simple Vigenere, or polyalphabet, Cipher:
 
