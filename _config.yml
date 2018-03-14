@@ -1,0 +1,8 @@
+title: Bcs-ciphers
+description: Minimal cipher functions in javascript for digital makers at beechen cliff
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-cayman
+
+gems:
+  - jekyll-mentions
