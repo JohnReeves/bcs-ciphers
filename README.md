@@ -122,7 +122,7 @@ function decodeCaesar(str,shift){
     return ret;
 }
 ```
-**You can do much better by merging the two functions into one.
+** You can do much better by merging the two functions into one.
 
 ### Python version
 
@@ -161,7 +161,7 @@ secret = encodeCaesar(yourName, shift)
 print yourPhrase + " is " + secret  
 ```
 
-**You can do much better by merging the two functions into one.
+** You can do much better by merging the two functions into one.
 
 ## 2. Simple Vigenere, or polyalphabet, Cipher:
 
@@ -275,7 +275,7 @@ secret = encodeVigenere(yourPhrase, key)
 print yourPhrase + " is " + secret  
 ```
 
-**the Viginere implementation could be improved, and the decode functionality needs to be added.
+** the Viginere implementation could be improved, and the decode functionality needs to be added.
 
 ## 3. Simple Book Cipher:
 
@@ -307,7 +307,7 @@ def decode(name, shift):
    return encoded
 ```
 
-**But the alphabet doesn't have to be in order, just known to the sender and receiver of the message
+** But the alphabet doesn't have to be in order, just known to the sender and receiver of the message
  
 ```python
 #in any order
@@ -348,6 +348,6 @@ print "hello,your name shifted by {0} is {1}".format( shift, coded_name )
 print "and your real name is ", decoded_name
 ```
  
-**To make you encoding even harder to crack, you could also make your alphabet random.
+** To make you encoding even harder to crack, you could also make your alphabet random.
  
 
