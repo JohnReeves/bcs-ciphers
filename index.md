@@ -10,24 +10,24 @@ People in the olden days who had secrets were generally well educated people who
  
 A good place to start with ciphers are:
  
-* Caesar Cipher – a simple shift cipher
-* Vigener Cipher – shifting with a key word
-* Book Cipher – shifting with an unknown alphabet
+* Caesar Cipher – a simple shift cipher   
+* Vigener Cipher – shifting with a key word   
+* Book Cipher – shifting with an unknown alphabet   
  
 ## 1. Encoding is easy, decoding is hard
 
-The idea with enciphering, is to make it hard to decode.
+The idea with enciphering, is to make it hard to decode ciphertext into plaintext.   
  
-* The Caesar is the easiest to decode, with only 26 possibilities for your decoded phrase – 
-the number of letters in the alphabet - plus the 10 digits.
+* The Caesar Cipher is the easiest to decode, with only 26 possibilities for your decoded phrase – 
+the number of letters in the alphabet - plus the 10 digits.   
  
 * The Vigener Cipher is immediately very much harder, because you have to find the key word, 
-which could be any length.
+which could be any length.   
 
-* Imagine how much harder the messages are to decode, if you have also to find the alphabet *and* the keyword.
+* Imagine how much harder the messages are to decode, if you have also to find the alphabet *and* the keyword.   
  
 * And now imagine if you can, the difficulties if you have to find a randomised mathematical function 
-that is shuffling everything too.
+that is shuffling everything too.   
  
 This is when solving cypher puzzles become an art!
 
@@ -61,7 +61,7 @@ Notice that the SVG Text has an ```id``` to link in to the JavaScript interactiv
 Then use ```javascript``` to change the text to the message your want to encode and decode, and a state variable to record if the message is decoded or not.
 
 ```javascript
-var yourname = "hello josh";
+var yourname = "hello world";
 var shift = 5;
 
 var caesarSecret = $("#caesarSecret");
