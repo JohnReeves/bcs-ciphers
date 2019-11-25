@@ -9,7 +9,7 @@ var isEncodedInCaesar = false;
 
 caesarSecret.click(function () {
 
-  caesarSecret.text(yourname);
+  /caesarSecret.text(yourname);
 
   if (isEncodedInCaesar == false) {
     yourname = encodeCaesar(yourname, shift)
