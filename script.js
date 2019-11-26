@@ -6,7 +6,12 @@ var caesarSecret = $("#caesarSecret");
 var isEncodedInCaesar = false;
 
 
-
+selection.
+  .append("text")
+    .attr("contentEditable", true)
+    .text(function(d) { return d.text })
+    .on("keyup", function(d) { d.text = d3.select(this).text(); });
+    
 caesarSecret.click(function () {
 
   /caesarSecret.text(yourname);
