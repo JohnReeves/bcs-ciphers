@@ -1,3 +1,6 @@
+var theText = myTextInput.value;
+
+console.log(theText);
 
 var yourname = "now is the winter of our discontent made glorious by this son of York";
 var shift = 5;
