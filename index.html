@@ -16,47 +16,29 @@
 
 	</script>
 
-
-
-	<svg height="600" width="600">
-
-		<style>
-			.small {
-				font: italic 13px Roboto;
-			}
-
-			.heavy {
-				font: bold 30px Roboto;
-			}
-
-			.Rrrrr {
-				font: italic 40px Roboto;
-				fill: red;
-			}
-		</style>
+	<svg height="300" width="600">
 
 		<text x="20" y="135" class="small">My</text>
 		<text id="cat" x="40" y="135" class="heavy">cat</text>
 		<text x="55" y="155" class="small">is</text>
 		<text id="grumpy" x="65" y="155" class="Rrrrr">Grumpy!</text>
 
-
-		<text id="caesarSecret" x="0" y="200" fill="green" font-family="Verdana" font-size="40" editable="true">
-			ATHCOOOOOO!!!!!!! </text>
-
-		<text id="caesarSecret2" x="0" y="240" fill="green" font-family="Verdana" font-size="40" contentEditable="true">
+		<text id="caesarSecret" x="0" y="200" fill="green" font-family="Roboto" font-size="40" editable="true">
 			ATHCOOOOOO!!!!!!! </text>
 
 	</svg>
 
+<form action="/encrypt-decrypt-handling" method="post">
+	<div>
+		<label for="input">Input message</label>
+    <textarea id="input" name="input_message"></textarea>
+  </div>
 
-	<label for="name">Name (4 to 8 characters):</label>
-
-<input type="text" id="myTextInput" name="name" required
-       minlength="4" maxlength="8" size="10">
-
-<input type="submit" value="Send Request">
-
+  <div>
+    <label for="output">Output message</label>
+    <textarea id="output" name="output_message"></textarea>
+  </div>
+</form>
 
 	<script src="script.js"></script>
 </body>
