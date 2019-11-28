@@ -1,23 +1,22 @@
-
-
-var yourname = "now is the winter of our discontent made glorious by this son of York";
 var shift = 5;
 
-var caesarSecret = $("#input");
-var isEncodedInCaesar = false;
-    
-caesarSecret.click(function () {
+var inputText = $("#input");
+var outputText = $("#output");
 
-  caesarSecret.text(yourname);
+var isEncodedInCaesar = false;
+
+inputText.click(function () {
+
+inputMessage = inputText.text();
 
   if (isEncodedInCaesar == false) {
-    yourname = encodeCaesar(yourname, shift)
+    outputMessage = encodeCaesar(inputMessage, shift)
     isEncodedInCaesar = true;
   } else {
-    yourname = decodeCaesar(yourname, shift);
+    outputMessage = decodeCaesar(outputMessage, shift);
     isEncodedInCaesar = false;
   }
-  caesarSecret.text(yourname);
+  outputText.text(outputMessage);
 });
 
 function encodeCaesar(str, shift) {
