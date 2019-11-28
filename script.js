@@ -1,9 +1,20 @@
-var shift = 5;
+var shift = 0;
 
 var inputText = $("#input");
 var outputText = $("#output");
 
+var shiftUp = $("#shiftUp");
+var shiftDown = $("#shiftDown");
+
 var isEncodedInCaesar = false;
+
+shiftUp.click(function () {
+  shift += 1;
+});
+
+shiftDown.click(function () {
+  shift -= 1;
+});
 
 inputText.click(function () {
 
