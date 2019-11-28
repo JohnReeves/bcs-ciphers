@@ -24,8 +24,6 @@ inputText.click(function () {
 
 function handleMessage() {
 inputMessage = inputText.text();
-console.log(shift);
-console.log(inputMessage);
 
  // if (isEncodedInCaesar == false) {
     outputMessage = encodeCaesar(inputMessage, shift)
