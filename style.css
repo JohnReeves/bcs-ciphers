@@ -1,6 +1,6 @@
 label {
     display: block;
-    font: 1rem 'Fira Sans', sans-serif;
+    font: 1rem 'Roboto', sans-serif;
 }
 
 input,
@@ -8,18 +8,18 @@ label {
     margin: .4rem 0;
 }
 
-			.small {
-				font: italic 13px Roboto;
-			}
+.small {
+    font: italic 13px Roboto;
+}
 
-			.heavy {
-				font: bold 30px Roboto;
-			}
+.heavy {
+    font: bold 30px Roboto;
+}
 
-			.Rrrrr {
-				font: italic 40px Roboto;
-				fill: red;
-			}
+.Rrrrr {
+    font: italic 40px Roboto;
+    fill: red;
+}
 
 form {
   /* Center the form on the page */

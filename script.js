@@ -1,4 +1,4 @@
-var shift = 0;
+var shift = 1;
 
 var inputText = $("#input");
 var outputText = $("#output");
@@ -10,15 +10,21 @@ var isEncodedInCaesar = false;
 
 shiftUp.click(function () {
   shift += 1;
+  handleMessage();
 });
 
 shiftDown.click(function () {
   shift -= 1;
+  handleMessage();
 });
 
 inputText.click(function () {
+  handleMessage();
+});
 
+function handleMessage() {
 inputMessage = inputText.text();
+console.log(shift);
 
   if (isEncodedInCaesar == false) {
     outputMessage = encodeCaesar(inputMessage, shift)
@@ -28,7 +34,7 @@ inputMessage = inputText.text();
     isEncodedInCaesar = false;
   }
   outputText.text(outputMessage);
-});
+}
 
 function encodeCaesar(str, shift) {
   /**
