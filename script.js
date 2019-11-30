@@ -7,6 +7,11 @@ var shiftUp = $("#shiftUp");
 var shiftDown = $("#shiftDown");
 
 // TODO: event handler to detect new input message
+inputText.change(function () {
+  inputMessage = $( "#input" ).text();
+  alert("handler called");
+  alert(inputMessage);
+});
 
 // click functions to call the cipher functions
 shiftUp.click(function () {
@@ -19,9 +24,7 @@ shiftDown.click(function () {
   handleMessage();
 });
 
-inputText.click(function () {
-  handleMessage();
-});
+
 
 function handleMessage() {
   inputMessage = inputText.text();
