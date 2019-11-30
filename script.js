@@ -6,8 +6,9 @@ var outputText = $("#output");
 var shiftUp = $("#shiftUp");
 var shiftDown = $("#shiftDown");
 
-var isEncodedInCaesar = false;
+// TODO: event handler to detect new input message
 
+// click functions to call the cipher functions
 shiftUp.click(function () {
   shift += 1;
   handleMessage();
@@ -23,17 +24,12 @@ inputText.click(function () {
 });
 
 function handleMessage() {
-inputMessage = inputText.text();
-
- // if (isEncodedInCaesar == false) {
-    outputMessage = encodeCaesar(inputMessage, shift)
-    isEncodedInCaesar = true;
-  //} else {
-  //  outputMessage = decodeCaesar(outputMessage, shift);
-  //  isEncodedInCaesar = false;
- // }
+  inputMessage = inputText.text();
+  outputMessage = encodeCaesar(inputMessage, shift)
   outputText.text(outputMessage);
 }
+
+// encode / decode functions
 
 function encodeCaesar(str, shift) {
   /**
