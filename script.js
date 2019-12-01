@@ -3,7 +3,7 @@ var shift = 0;
 var inputText = $("#input");
 var outputText = $("#output");
 
-var inputMessage = $( "#input" ).val();
+var inputMessage = $("#input").val();
 var outputMessage = $("#output").val();
 
 var shiftUp = $("#shiftUp");
@@ -11,7 +11,7 @@ var shiftDown = $("#shiftDown");
 
 // event handler to detect new input message
 inputText.change(function () {
-  inputMessage = $( "#input" ).val();
+  inputMessage = $("#input").val();
   handleMessage();
 });
 
@@ -41,8 +41,8 @@ function encodeCaesar(str, shift) {
   var i = 0;
 
   while (i < str.length) {
-    ret += String.fromCharCode(str.charCodeAt(i) + shift);
-    i += 1;
+      ret += String.fromCharCode(str.charCodeAt(i) + shift);
+      i += 1;
   }
   return ret;
 }
