@@ -3,6 +3,9 @@ var shift = 0;
 var inputText = $("#input");
 var outputText = $("#output");
 
+var inputMessage = $( "#input" ).val();
+var outputMessage = $("#output").val();
+
 var shiftUp = $("#shiftUp");
 var shiftDown = $("#shiftDown");
 
@@ -29,7 +32,6 @@ function handleMessage() {
 }
 
 // encode / decode functions
-
 function encodeCaesar(str, shift) {
   /**
    *  Encode the Caesar Cipher by shifting
