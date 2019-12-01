@@ -6,11 +6,10 @@ var outputText = $("#output");
 var shiftUp = $("#shiftUp");
 var shiftDown = $("#shiftDown");
 
-// TODO: event handler to detect new input message
+// event handler to detect new input message
 inputText.change(function () {
-  inputMessage = $( "#input" ).text();
-  alert("handler called");
-  alert(inputMessage);
+  inputMessage = $( "#input" ).val();
+  handleMessage();
 });
 
 // click functions to call the cipher functions
@@ -24,10 +23,7 @@ shiftDown.click(function () {
   handleMessage();
 });
 
-
-
 function handleMessage() {
-  inputMessage = inputText.text();
   outputMessage = encodeCaesar(inputMessage, shift)
   outputText.text(outputMessage);
 }
