@@ -9,9 +9,13 @@ var outputMessage = $("#output").val();
 var shiftUp = $("#shiftUp");
 var shiftDown = $("#shiftDown");
 
+// TODO: add a button to remove spaces
 // TODO: textarea/text input for the vigenere cypher key
 // TODO: click functions to call the vigenere cypher
 // TODO: design an output space for candidate deciphering
+
+// populate the output box once to show what it does
+handleMessage();
 
 // event handler to detect new input message
 inputText.change(function () {
