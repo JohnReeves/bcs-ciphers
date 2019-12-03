@@ -1,5 +1,5 @@
 var shift = 0;
-var key = "AARDVARK"; // thank you Simon B
+var key = "aardvark"; // thank you Simon B
 
 var inputText = $("#input");
 var outputText = $("#output");
@@ -12,10 +12,10 @@ var shiftDown = $("#shiftDown");
 var vigenere = $("#vigenere");
 var removeSpaces = $("#spaces");
 
-// TODO: add a button to remove spaces
 // TODO: textarea/text input for the vigenere cypher key
-// TODO: click functions to call the vigenere cypher
 // TODO: design an output space for candidate deciphering
+// TODO: verify deciphering with a standard message
+// TODO: separate into functional files
 
 // populate the output box once to show what it does
 handleMessage();
