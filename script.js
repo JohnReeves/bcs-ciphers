@@ -1,4 +1,5 @@
 var shift = 0;
+var key = "AARDVARK"; // thank you Simon B
 
 var inputText = $("#input");
 var outputText = $("#output");
@@ -8,6 +9,8 @@ var outputMessage = $("#output").val();
 
 var shiftUp = $("#shiftUp");
 var shiftDown = $("#shiftDown");
+var vigenere = $("#vigenere");
+var removeSpaces = $("#spaces");
 
 // TODO: add a button to remove spaces
 // TODO: textarea/text input for the vigenere cypher key
@@ -34,12 +37,45 @@ shiftDown.click(function () {
   handleMessage();
 });
 
+vigenere.click(function () {
+  shift -= 1;
+  handleVigenere();
+});
+
+removeSpaces.click(function () {
+  outputMessage = handleSpaces(inputMessage)
+  outputText.text(outputMessage);
+});
+
 function handleMessage() {
   outputMessage = encodeCaesar(inputMessage, shift)
   outputText.text(outputMessage);
 }
 
+function handleVigenere() {
+  outputMessage1 = encodeVignere(outputMessage, key)
+  outputText.text(outputMessage1);
+}
+
 // encode / decode functions
+function handleSpaces(str) {
+  /**
+   *  Encode the Caesar Cipher by shifting
+   *   each character by a fixed amount 
+  */
+  var ret = '';
+  var i = 0;
+
+  while (i < str.length) {
+    ch = String.fromCharCode(str.charCodeAt(i));
+    if (ch != " ") {
+      ret += ch;
+    }
+    i += 1;
+  }
+  return ret;
+}
+
 function encodeCaesar(str, shift) {
   /**
    *  Encode the Caesar Cipher by shifting
@@ -71,7 +107,7 @@ function decodeCaesar(str, shift) {
   return ret;
 }
 
-function encodeVignere(str) {
+function encodeVignere(str, key) {
   /**
    *  Encode the Vignere Cipher
    *  by shifting each character in yourPhrase
