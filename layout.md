@@ -11,7 +11,7 @@ A good place to start with ciphers are:
  
 * Caesar Cipher – a simple shift cipher   
 * Vigener Cipher – shifting with a key word   
-* Book Cipher – shifting with an unknown alphabet    
+* Book Cipher – shifting with an unknown alphabet   
  
 ## 1. Encoding is easy, decoding is hard
 
@@ -36,7 +36,7 @@ a time when most people didn't read or if you can't speak Latin!
 
 It's a easy place to start with ciphers, and you can program it in JavaScript or Python.
 
-Encoding and decoding are just opposites.
+Encoding and decoding are just shifting in opposite directions.
 
 ## 3. Create a form in HTML    
 
@@ -44,7 +44,7 @@ First, we need a way of putting in some words to encode or decode.
 
 Start a new repl.it or jsfiddle.net with HTML, css & javascript.
 
-In the body of you repl.it code or on the HTML box:
+In the body of your repl.it code or in the HTML box:
 
 ```html
 <form action="/encrypt-decrypt-handling" method="post">
@@ -66,8 +66,6 @@ In the body of you repl.it code or on the HTML box:
 
 Run the code to see the two text boxes and two buttons to control the encoding and decoding.
 
-The form is not very pretty and we wouldn't want to use it for very long.
+### The next worksheet shows you how to improve the layout and add some colour.
 
-Move on to the next worksheet to learn how to improve the layout and add some colour.
-
-
+Before you move on try adding a title and some more buttons ready for the vigenere cipher and the book cipher.
