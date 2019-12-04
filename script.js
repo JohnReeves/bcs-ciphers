@@ -105,16 +105,20 @@ function encodeVignere(phrase, keyPhrase) {
    *  repeating key
   */
   var ret = '';
-  console.log(phrase, key);
+  keyIndex = 0;
+
+  console.log(phrase, keyPhrase);
   for (letter of phrase) {
     // we want A as the first letter of the alphabet,
     // A is ASCII 65, so subtract 65 from each charCodeAt in the key
-    for (keyLetter of keyPhrase) {
-      ret +=
-        String.fromCharCode(letter.charCodeAt(letter) +
-          key.charCodeAt(keyLetter) - 65);
-    }
+    ret +=
+      String.fromCharCode(letter.charCodeAt(letter) +
+        keyPhrase.charCodeAt(keyIndex) -
+        65);
+    keyIndex++;
+
+    if (keyIndex == keyPhrase.length) keyIndex = 0;
   }
-  console.log(ret);
-  return ret;
+console.log(ret);
+return ret;
 }
