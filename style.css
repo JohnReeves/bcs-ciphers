@@ -57,6 +57,10 @@ textarea {
   height: 5em;
 }
 
+.keys {
+  height:2em;
+}
+
 button {
   padding-left: 90px;
   }

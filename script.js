@@ -1,15 +1,17 @@
 var shift = 0;
-var key = "abc"; // thank you Simon B
+var vigenereKey = "abc"; // thank you Simon Buist
 
 var inputText = $("#input");
+var vigenereText = $("#vigenereKey");
 var outputText = $("#output");
 
 var inputMessage = $("#input").val();
+var vigenereKey = $("#vigenereKey").val();
 var outputMessage = $("#output").val();
 
 var shiftUp = $("#shiftUp");
 var shiftDown = $("#shiftDown");
-var vigenere = $("#vigenere");
+var vigenereEncode = $("#vigenereEncode");
 var removeSpaces = $("#spaces");
 
 // TODO: textarea/text input for the vigenere cypher key
@@ -27,6 +29,13 @@ inputText.change(function () {
   handleMessage();
 });
 
+// event handler to detect new vigenere key
+vigenereText.change(function () {
+  vigenereKey = $("#vigenereKey").val();
+  console.log(vigenereKey);
+  handleVigenere();
+});
+
 // click functions to call the cipher functions
 shiftUp.click(function () {
   shift += 1;
@@ -38,7 +47,7 @@ shiftDown.click(function () {
   handleMessage();
 });
 
-vigenere.click(function () {
+vigenereEncode.click(function () {
   //shift -= 1;
   handleVigenere();
 });
@@ -54,8 +63,8 @@ function handleMessage() {
 }
 
 function handleVigenere() {
-  console.log(inputMessage, key);
-  outputMessage = encodeVignere(inputMessage, key)
+  console.log(inputMessage, vigenereKey);
+  outputMessage = encodeVignere(inputMessage, vigenereKey)
   outputText.text(outputMessage);
 }
 
