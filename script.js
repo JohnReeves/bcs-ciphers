@@ -16,6 +16,7 @@ var removeSpaces = $("#spaces");
 // TODO: design an output space for candidate deciphering
 // TODO: verify deciphering with a standard message
 // TODO: separate into functional files
+// TODO: bootstrap template
 
 // populate the output box once to show what it does
 handleMessage();
@@ -109,7 +110,7 @@ function encodeVignere(phrase, key) {
   for (letter of phrase) {
     // we want A as the first letter of the alphabet,
     // A is ASCII 65, so subtract 65 from each charCodeAt in the key
-    ret += String.fromCharCode(l.charCodeAt(letter) + key.charCodeAt(keyIndex) - 65);
+    ret += String.fromCharCode(letter.charCodeAt(letter) + key.charCodeAt(keyIndex) - 65);
 
     keyIndex++;
 
