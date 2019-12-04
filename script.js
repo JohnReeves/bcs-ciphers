@@ -1,5 +1,5 @@
 var shift = 0;
-var key = "aardvark"; // thank you Simon B
+var key = "a"; // thank you Simon B
 
 var inputText = $("#input");
 var outputText = $("#output");
@@ -58,35 +58,25 @@ function handleVigenere() {
 }
 
 // encode / decode functions
-function handleSpaces(str) {
-  /**
-   *  Encode the Caesar Cipher by shifting
-   *   each character by a fixed amount 
-  */
-  var ret = '';
-  var i = 0;
+function handleSpaces(phrase) {
+  let ret = '';
+  let space = " ";
 
-  while (i < str.length) {
-    ch = String.fromCharCode(str.charCodeAt(i));
-    if (ch != " ") {
-      ret += ch;
-    }
-    i += 1;
+  for (letter of phrase) {
+    if (letter != space) ret += letter;
   }
   return ret;
 }
 
-function encodeCaesar(str, shift) {
+function encodeCaesar(phrase, shift) {
   /**
    *  Encode the Caesar Cipher by shifting
    *   each character by a fixed amount 
   */
   var ret = '';
-  var i = 0;
 
-  while (i < str.length) {
-    ret += String.fromCharCode(str.charCodeAt(i) + shift);
-    i += 1;
+  for (letter of phrase) {
+    ret += String.fromCharCode(letter.charCodeAt(letter) + shift);
   }
   return ret;
 }
@@ -100,14 +90,13 @@ function decodeCaesar(str, shift) {
   var ret = '';
   var i = 0;
 
-  while (i < str.length) {
-    ret += String.fromCharCode(str.charCodeAt(i) - shift);
-    i += 1;
+  for (letter of phrase) {
+    ret += String.fromCharCode(letter.charCodeAt(letter) - shift);
   }
   return ret;
 }
 
-function encodeVignere(str, key) {
+function encodeVignere(phrase, key) {
   /**
    *  Encode the Vignere Cipher
    *  by shifting each character in yourPhrase
@@ -115,15 +104,13 @@ function encodeVignere(str, key) {
    *  repeating key
   */
   var ret = '';
-  var phraseIndex = 0;
   var keyIndex = 0;
 
-  while (phraseIndex < str.length) {
+  for (letter of phrase) {
     // we want A as the first letter of the alphabet,
     // A is ASCII 65, so subtract 65 from each charCodeAt in the key
-    ret += String.fromCharCode(str.charCodeAt(phraseIndex) + key.charCodeAt(keyIndex) - 65);
+    ret += String.fromCharCode(l.charCodeAt(letter) + key.charCodeAt(keyIndex) - 65);
 
-    phraseIndex++;
     keyIndex++;
 
     if (keyIndex == key.length) {
