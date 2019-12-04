@@ -1,5 +1,5 @@
 var shift = 0;
-var key = "a"; // thank you Simon B
+var key = "abc"; // thank you Simon B
 
 var inputText = $("#input");
 var outputText = $("#output");
@@ -39,7 +39,7 @@ shiftDown.click(function () {
 });
 
 vigenere.click(function () {
-  shift -= 1;
+  //shift -= 1;
   handleVigenere();
 });
 
@@ -54,8 +54,9 @@ function handleMessage() {
 }
 
 function handleVigenere() {
-  outputMessage1 = encodeVignere(outputMessage, key)
-  outputText.text(outputMessage1);
+  console.log(inputMessage, key);
+  outputMessage = encodeVignere(inputMessage, key)
+  outputText.text(outputMessage);
 }
 
 // encode / decode functions
@@ -82,14 +83,13 @@ function encodeCaesar(phrase, shift) {
   return ret;
 }
 
-function decodeCaesar(str, shift) {
+function decodeCaesar(phrase, shift) {
   /**
    *  Decode the Caesar Cipher by shifting
    *  by shifting each character back again
    *  by the same amount
   */
   var ret = '';
-  var i = 0;
 
   for (letter of phrase) {
     ret += String.fromCharCode(letter.charCodeAt(letter) - shift);
@@ -97,7 +97,7 @@ function decodeCaesar(str, shift) {
   return ret;
 }
 
-function encodeVignere(phrase, key) {
+function encodeVignere(phrase, keyPhrase) {
   /**
    *  Encode the Vignere Cipher
    *  by shifting each character in yourPhrase
@@ -105,19 +105,16 @@ function encodeVignere(phrase, key) {
    *  repeating key
   */
   var ret = '';
-  var keyIndex = 0;
-
+  console.log(phrase, key);
   for (letter of phrase) {
     // we want A as the first letter of the alphabet,
     // A is ASCII 65, so subtract 65 from each charCodeAt in the key
-    ret += String.fromCharCode(letter.charCodeAt(letter) + key.charCodeAt(keyIndex) - 65);
-
-    keyIndex++;
-
-    if (keyIndex == key.length) {
-      keyIndex = 0;
+    for (keyLetter of keyPhrase) {
+      ret +=
+        String.fromCharCode(letter.charCodeAt(letter) +
+          key.charCodeAt(keyLetter) - 65);
     }
   }
+  console.log(ret);
   return ret;
-
 }
