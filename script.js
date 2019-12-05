@@ -31,7 +31,6 @@ inputText.change(function () {
 // event handler to detect new vigenere key
 vigenereText.change(function () {
   vigenereKey = $("#vigenereKey").val();
-  console.log(vigenereKey);
   handleVigenere();
 });
 
@@ -54,6 +53,7 @@ vigenereEncode.click(function () {
 removeSpaces.click(function () {
   outputMessage = handleSpaces(inputMessage)
   outputText.text(outputMessage);
+  inputMessage = outputMessage;
 });
 
 function handleMessage() {
@@ -62,7 +62,6 @@ function handleMessage() {
 }
 
 function handleVigenere() {
-  console.log(inputMessage, vigenereKey);
   outputMessage = encodeVignere(inputMessage, vigenereKey)
   outputText.text(outputMessage);
 }
@@ -115,18 +114,16 @@ function encodeVignere(phrase, keyPhrase) {
   var ret = '';
   keyIndex = 0;
 
-  console.log(phrase, keyPhrase);
   for (letter of phrase) {
+    // Input message in CAPITALS
     // we want A as the first letter of the alphabet,
     // A is ASCII 65, so subtract 65 from each charCodeAt in the key
-    ret +=
-      String.fromCharCode(letter.charCodeAt(letter) +
-        keyPhrase.charCodeAt(keyIndex) -
-        65);
-    keyIndex++;
+    ret += String.fromCharCode(letter.charCodeAt(letter) + keyPhrase.charCodeAt(keyIndex) - 65);
 
-    if (keyIndex == keyPhrase.length) keyIndex = 0;
+    if (keyIndex == keyPhrase.length - 1)
+      keyIndex = 0;
+    else
+      keyIndex++;
   }
-console.log(ret);
-return ret;
+  return ret;
 }
