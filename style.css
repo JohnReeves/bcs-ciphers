@@ -4,7 +4,7 @@ form {
   padding: 1em;
   border: 5px solid #CCC;
   border-radius: 1em;
-  background-color: #c0ffee;
+  background-color: #ee93df;
 }
 
 form div + div {
@@ -48,7 +48,7 @@ textarea {
   width: 300px;
   box-sizing: border-box;
   border: 1px solid #999;
-  background-color: #c0f;
+  background-color: rgb(231, 240, 116);
 }
 
 input:focus, 
@@ -72,11 +72,11 @@ button {
 button {
   font-size: 15px;
   padding: 5px;
-  background-color: #084CA1;
+  background-color: rgb(231, 240, 116);
   font-weight:bold;
   cursor: pointer;
   width:48%;
-  color:white;
+  color:rgb(78, 69, 69);
   border-radius:3px;
   margin-left:6px;
   font-family: 'Roboto', serif;
