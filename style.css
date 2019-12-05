@@ -1,3 +1,17 @@
+form {
+  margin: 0 auto;
+  width: 400px;
+  padding: 1em;
+  border: 5px solid #CCC;
+  border-radius: 1em;
+  background-color: #c0ffee;
+}
+
+form div + div {
+  margin-top: 1em;
+}
+
+
 label {
     display: block;
     font: 1rem 'Roboto', sans-serif;
@@ -14,6 +28,7 @@ label {
   text-align: right;
 }
 
+
 .small {
     font: italic 13px Roboto;
 }
@@ -26,21 +41,6 @@ label {
     font: italic 40px Roboto;
     fill: red;
 }
-
-
-form {
-  margin: 0 auto;
-  width: 400px;
-  padding: 1em;
-  border: 5px solid #CCC;
-  border-radius: 1em;
-  background-color: #c0ffee;
-}
-
-form div + div {
-  margin-top: 1em;
-}
-
 
 input, 
 textarea {
