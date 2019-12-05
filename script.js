@@ -14,7 +14,6 @@ var shiftDown = $("#shiftDown");
 var vigenereEncode = $("#vigenereEncode");
 var removeSpaces = $("#spaces");
 
-// TODO: textarea/text input for the vigenere cypher key
 // TODO: design an output space for candidate deciphering
 // TODO: verify deciphering with a standard message
 // TODO: separate into functional files
