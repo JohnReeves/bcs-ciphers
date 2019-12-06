@@ -89,7 +89,6 @@ let shift = 0;
 
 let shiftUp = $("#shiftUp");
 let shiftDown = $("#shiftDown");
-let removeSpaces = $("#spaces");
 
 // click functions to call the cipher functions
 shiftUp.click(function () {
