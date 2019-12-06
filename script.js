@@ -1,3 +1,5 @@
+alphabet="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
 var shift = 0;
 var vigenereKey = "abc"; // thank you Simon Buist
 
