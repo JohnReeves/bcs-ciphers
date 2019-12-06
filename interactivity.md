@@ -82,7 +82,7 @@ outputText.text(ret);
 
 ## 4. Joining the HTML to the JavaScript
 
-The code below include the shift up and shift down buttons to control the caesar cipher cipher text.
+The code below links the shift up and shift down buttons to the JavaScript code.
 
 ```javascript
 let shift = 0;
@@ -106,7 +106,11 @@ function handleMessage() {
   outputMessage = encodeCaesar(inputMessage, shift)
   outputText.text(outputMessage);
 }
+```
 
+This code performs the shift:
+
+```javascript
 // encode / decode functions
 function encodeCaesar(phrase, shift) {
   let ret = '';
@@ -120,17 +124,67 @@ function encodeCaesar(phrase, shift) {
       );  }
   return ret;
 }
+```
+Remember encoding and decoding the Caesar are just opposites of eachother, the same as shifting up and shifting down.
 
-function decodeCaesar(phrase, shift) {
+## 5. Extending your Ciphr-Solvr
+
+Can you add the HTML and JavaScript to add these functions:
+
+### removing spaces
+
+```javascript
+// steps over the input phrase ignoring spaces
+function handleSpaces(phrase) {
   let ret = '';
+  let space = " ";
+
+  for (letter of phrase) {
+    if (letter != space) ret += letter;
+  }
+  return ret;
+}
+```
+
+### vigenere cipher
+
+```javascript
+// event handler to detect new vigenere key
+vigenereText.change(function () {
+  vigenereKey = $("#vigenereKey").val();
+  handleVigenere();
+});
+
+vigenereEncode.click(function () {
+  handleVigenere();
+});
+
+function handleVigenere() {
+  outputMessage = encodeVignere(inputMessage, vigenereKey)
+  outputText.text(outputMessage);
+}
+
+function encodeVignere(phrase, keyPhrase) {
+  let ret = '';
+  keyIndex = 0;
 
   for (letter of phrase) {
     ret +=
     alphabet.charAt((
-      alphabet.indexOf(letter)-
-      shift)%
+      alphabet.indexOf(letter)+
+      alphabet.indexOf(keyPhrase[keyIndex]))%
       alphabet.length
-      );  }
+      );
+  }
+
+  if (keyIndex == keyPhrase.length - 1)
+      keyIndex = 0;
+    else
+      keyIndex++;
+  }
   return ret;
 }
+
 ```
+
+Can you add more Ciphers?
