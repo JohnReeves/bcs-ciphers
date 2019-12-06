@@ -5,7 +5,7 @@
 To change the plain text to cipher text we need to know how to:
 * input and output text .  
 * read text and change the letters .  
-* joining the HTML to the JavaScript .  
+* join the HTML form to the JavaScript funcitons .  
 
 It will also be super-helpful to give feedback on the screen to let us know what is happending.
 
@@ -27,7 +27,7 @@ var outputMessage = $("#output").val();
 // jquery event handler to detect new input message
 inputText.change(function () {
   inputMessage = $("#input").val();
-  outputText.text(outputMessage);
+  outputText.text(inputMessage);
 });
 
 ```
@@ -38,10 +38,10 @@ inputText.change(function () {
 
 JavaScript can step over each letter in a string using: 
 
-`for ()` iterates over all the characters in the string;   
-`in` gives the index of the character in the string;
-`of` gives the character in the string.
-`%` means that when we shift our characters we go back to the beginning ie `z` goes back to `a`.
+`for ()` iterates over all the characters in the string   
+`in` gives the index of the character in the string   
+`of` gives the character in the string   
+`%` means that when we shift our characters we go back to the beginning ie `z` goes back to `a` .  
 
 Copy the code to shift the letters in the `textarea` text as we need to in our cryptography
 
@@ -52,18 +52,12 @@ alphabet="abcdefghijklmnopqrstuvwxyz";
 // 26 letters?
 console.log(alphabet.length);
 
-for (letter of inputMessage) {
-  console.log(letter);
-
-}
-
-for (letterChar of inputMessage) {
+f  for (letterChar of inputMessage) {
   console.log(
-    "letter "+letterChar+
-    " is the "+alphabet.indexAt(letterChar)+
-    " letter of the alphabet"
+    "Letter "+letterChar+
+    " is the "+alphabet.indexOf(letterChar)+
+    " letter of  alphabet"
     );
-
 }
 ```
 
@@ -75,13 +69,13 @@ alphabet="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
 message="now is the winter of our discontent made glorious by this son of York!";
 shift=5;
 
-for (letterChar of inputMessage){
+  ret='';
+  for (letterChar of inputMessage){
     ret +=
-    alphabet.charAt(
-      alphabet.indexAt(letterChar)+
-      shift)%
-      alphabet.length
-      );
+      alphabet.charAt((
+      alphabet.indexOf(letterChar)+
+      shift
+      )%alphabet.length);
 }
 outputText.text(ret);
 ```
@@ -108,26 +102,9 @@ shiftDown.click(function () {
   handleMessage();
 });
 
-removeSpaces.click(function () {
-  outputMessage = handleSpaces(inputMessage)
-  outputText.text(outputMessage);
-  inputMessage = outputMessage;
-});
-
 function handleMessage() {
   outputMessage = encodeCaesar(inputMessage, shift)
   outputText.text(outputMessage);
-}
-
-// steps over the input phrase ignoring spaces
-function handleSpaces(phrase) {
-  let ret = '';
-  let space = " ";
-
-  for (letter of phrase) {
-    if (letter != space) ret += letter;
-  }
-  return ret;
 }
 
 // encode / decode functions
@@ -136,8 +113,8 @@ function encodeCaesar(phrase, shift) {
 
   for (letter of phrase) {
     ret +=
-    alphabet.charAt(
-      alphabet.indexAt(letterChar)+
+    alphabet.charAt((
+      alphabet.indexOf(letter)+
       shift)%
       alphabet.length
       );  }
@@ -149,13 +126,11 @@ function decodeCaesar(phrase, shift) {
 
   for (letter of phrase) {
     ret +=
-    alphabet.charAt(
-      alphabet.indexAt(letterChar)-
+    alphabet.charAt((
+      alphabet.indexOf(letter)-
       shift)%
       alphabet.length
       );  }
   return ret;
 }
 ```
-
-
