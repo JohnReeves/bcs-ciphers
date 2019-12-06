@@ -124,7 +124,7 @@ button {
 
 ## Make the cipher input form beautiful
 
-Replace my horrible colours with your favourites from the Material Design colours.
+Replace my horrible colours with your favourites from the [Material Design colours](https://material.io/design/color/)
 
 Use the styling rules to make your cipher tool beautiful.
 
