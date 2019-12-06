@@ -75,7 +75,7 @@ alphabet="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
 message="now is the winter of our discontent made glorious by this son of York!";
 shift=5;
 
-for (letterChar of message){
+for (letterChar of inputMessage){
     ret +=
     alphabet.charAt(
       alphabet.indexAt(letterChar)+
@@ -88,7 +88,74 @@ outputText.text(ret);
 
 ## 4. Joining the HTML to the JavaScript
 
+The code below include the shift up and shift down buttons to control the caesar cipher cipher text.
 
+```javascript
+let shift = 0;
 
+let shiftUp = $("#shiftUp");
+let shiftDown = $("#shiftDown");
+let removeSpaces = $("#spaces");
+
+// click functions to call the cipher functions
+shiftUp.click(function () {
+  shift += 1;
+  handleMessage();
+});
+
+shiftDown.click(function () {
+  shift -= 1;
+  handleMessage();
+});
+
+removeSpaces.click(function () {
+  outputMessage = handleSpaces(inputMessage)
+  outputText.text(outputMessage);
+  inputMessage = outputMessage;
+});
+
+function handleMessage() {
+  outputMessage = encodeCaesar(inputMessage, shift)
+  outputText.text(outputMessage);
+}
+
+// steps over the input phrase ignoring spaces
+function handleSpaces(phrase) {
+  let ret = '';
+  let space = " ";
+
+  for (letter of phrase) {
+    if (letter != space) ret += letter;
+  }
+  return ret;
+}
+
+// encode / decode functions
+function encodeCaesar(phrase, shift) {
+  let ret = '';
+
+  for (letter of phrase) {
+    ret +=
+    alphabet.charAt(
+      alphabet.indexAt(letterChar)+
+      shift)%
+      alphabet.length
+      );  }
+  return ret;
+}
+
+function decodeCaesar(phrase, shift) {
+  let ret = '';
+
+  for (letter of phrase) {
+    ret +=
+    alphabet.charAt(
+      alphabet.indexAt(letterChar)-
+      shift)%
+      alphabet.length
+      );  }
+  return ret;
+}
+```
 
 
