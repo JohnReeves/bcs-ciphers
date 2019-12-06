@@ -18,11 +18,11 @@ You already added the the HTML `id` attributes :-)
 In script.js in repl.it or in the JavaScript box in jsfiddle copy this code:
 
 ```javascript
-var inputText = $("#input");
-var outputText = $("#output");
+let inputText = $("#input");
+let outputText = $("#output");
 
-var inputMessage = $("#input").val();
-var outputMessage = $("#output").val();
+let inputMessage = $("#input").val();
+let outputMessage = $("#output").val();
 
 // jquery event handler to detect new input message
 inputText.change(function () {
@@ -47,12 +47,12 @@ Copy the code to shift the letters in the `textarea` text as we need to in our c
 
 ```javascript
 // letters of the alphabet
-alphabet="abcdefghijklmnopqrstuvwxyz";
+let alphabet="abcdefghijklmnopqrstuvwxyz";
 
 // 26 letters?
 console.log(alphabet.length);
 
-f  for (letterChar of inputMessage) {
+for (letterChar of inputMessage) {
   console.log(
     "Letter "+letterChar+
     " is the "+alphabet.indexOf(letterChar)+
