@@ -1,19 +1,16 @@
+# Ciphr-Solvr: Your cipher solver
+ 
+## 1. Improving the layout with CSS 
 
-# Improving the layout with CSS 
+CSS is a programming language used to make HTML cool and stylish, *and* to make things move. 
 
-CSS is a programming language used to make html cool and stylish. 
+We will use CSS to line up the textboxes and buttons on the form.
 
-Later you will find out how to make things move using CSS :-)
+In the style.css file in repl.it or in the css box in jsfiddle:
 
-First, we will use CSS to line up the textboxes and buttons to make our cipher tools look beautiful.
-
-In the style.css file or in the css box:
-
-## 1. Fabulous Forms
+## 2. Fabulous Forms
 
 Format the form with the CSS below.
-
-There are more options you can use to make the form exactly as you like it.
 
 ```css
 form {
@@ -30,11 +27,11 @@ form div + div {
 }
 ```
 
-## 2. Tremendous Textboxes
+There are more options you can use to make the form exactly as you like it.
+
+## 3. Tremendous Textboxes
 
 use the CSS below to choose the font for the labels and line up the text with the boxes.
-
-I like Roboto but you can chose anything you like.
 
 ```css
 label {
@@ -53,11 +50,12 @@ label {
   text-align: right;
 }
 ```
-## 3. Frenetic Fonts
+
+I like Roboto but you can chose anything you like.
+
+## 4. Frenetic Fonts
 
 These show how to define your own styling tags.
-
-You can take full control of text styling to make beautiful banners.
 
 ```css
 .small {
@@ -74,11 +72,11 @@ You can take full control of text styling to make beautiful banners.
 }
 ```
 
+You can take full control of text styling to make beautiful banners.
+
 ## 5. Incredible Inputs
 
 These CSS lines make the input boxes a nice size and colour.
-
-Take some time to play around to find out what you can control.
 
 ```css
 input, 
@@ -96,11 +94,11 @@ textarea:focus {
 }
 ```
 
+Take some time to play around to find out what you can control.
+
 ## 6. Bountiful Buttons
 
 Buttons need round corners and colours to encourage you to press them.
-
-Find out what you can do with them!
 
 ```css
 button {
@@ -122,10 +120,12 @@ button {
   }
 ```
 
-## Make the cipher input form beautiful
+Find out what you can do with them!
+
+## 7. Colour me beautiful
 
 Replace my horrible colours with your favourites from the [Material Design colours](https://material.io/design/color/)
 
-Use the styling rules to make your cipher tool beautiful.
+Use the Material Design styling rules to make your cipher tools beautiful.
 
 .

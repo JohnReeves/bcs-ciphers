@@ -1,73 +1,94 @@
+# Ciphr-Solvr: Your cipher solver
+ 
+## 1. Making it work with JavaScript 
 
-// string handling 
-// input and output text
-// wiring in the buttons
-
-We need to know some string handling to process the plain text or cipher text on our form.
+To change the plain text to cipher text we need to know how to:
+* input and output text .  
+* read text and change the letters .  
+* joining the HTML to the JavaScript .  
 
 It will also be super-helpful to give feedback on the screen to let us know what is happending.
 
-## 1. Letters and Strings of letters
+## 2. Input and Output Text
 
-Letters and Strings are JavaScript objects with lots of functionality built in:
+`JQuery` is included as a package in repl.it and a library in jsfiddle to help input and output text, and to link up the buttons.
 
-Open the developer tools to find out how well Javascript understand letters and strings of letters very well!
+You already added the the HTML `id` attributes :-)
 
-```javascript
-alphabet="abcdefghijklmnopqrstuvwxyz";
-```
+In script.js in repl.it or in the JavaScript box in jsfiddle copy this code:
 
 ```javascript
-alphabet.length
+var inputText = $("#input");
+var outputText = $("#output");
+
+var inputMessage = $("#input").val();
+var outputMessage = $("#output").val();
+
+// jquery event handler to detect new input message
+inputText.change(function () {
+  inputMessage = $("#input").val();
+  outputText.text(outputMessage);
+});
+
 ```
 
-Addressing individual characters
+`.val()` is a function to accesses the `Textarea`'s text.
 
-```javascript
-alphabet.charAt(1);
-alphabet.indexOf("a");
-```
+## 3. Reading Text and Changing Letters
 
-NB: We could use the ASCII numbers given by `charCodeAt()`
-
-## 2. Shifting characters
-
-Knowing the value of the index of a letter in a string allows you to shift the letters as we need to in our cryptography 
+JavaScript can step over each letter in a string using: 
 
 `for ()` iterates over all the characters in the string;   
 `in` gives the index of the character in the string;
 `of` gives the character in the string.
 `%` means that when we shift our characters we go back to the beginning ie `z` goes back to `a`.
 
+Copy the code to shift the letters in the `textarea` text as we need to in our cryptography
+
 ```javascript
-for (letterChar of alphabet) console.log(letterChar);
+// letters of the alphabet
+alphabet="abcdefghijklmnopqrstuvwxyz";
+
+// 26 letters?
+console.log(alphabet.length);
+
+for (letter of inputMessage) {
+  console.log(letter);
+
+}
+
+for (letterChar of inputMessage) {
+  console.log(
+    "letter "+letterChar+
+    " is the "+alphabet.indexAt(letterChar)+
+    " letter of the alphabet"
+    );
+
+}
 ```
 
-```javascript
-for letterIndex in alphabet) console.log(alphabet[letterIndex]);
-```
+The following code shifts each letter in the input message by a fixed amount and writes it to the output box:
 
 ```javascript
-for letter in alphabet) console.log(alphabet[(letter+shift)%alphabet.length])
-```
-
-## 3. Shifting strings of characters
-
-The following shows how to put all of those together in a single script.
-
-### Make sure you read your script to understand.
-
-
-```javascript
+// we can do capitals as well
 alphabet="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
 message="now is the winter of our discontent made glorious by this son of York!";
 shift=5;
 
 for (letterChar of message){
-    console.log(alphabet.charAt(alphabet.indexAt(letterChar)+shift)%alphabet.length);
+    ret +=
+    alphabet.charAt(
+      alphabet.indexAt(letterChar)+
+      shift)%
+      alphabet.length
+      );
 }
+outputText.text(ret);
 ```
 
-## 4. Linking up the buttons & textboxes
+## 4. Joining the HTML to the JavaScript
+
+
+
 
 
