@@ -3,31 +3,50 @@
 // input and output text
 // wiring in the buttons
 
-## 1. Letters 
+We need to know some string handling to process the plain text or cipher text on our form.
+
+It will also be super-helpful to give feedback on the screen to let us know what is happending.
+
+## 1. Letters and Strings of letters
 
 Letters and Strings are JavaScript objects with lots of functionality built in:
 
 Open the developer tools to find out how well Javascript understand letters and strings of letters very well!
 
 ```javascript
-"your name".length
+alphabet="abcdefghijklmnopqrstuvwxyz";
 ```
+
 ```javascript
-"your name".charCodeAt(1)
+alphabet.length
 ```
-`charCodeAt()` gives the ASCII code for each letter. [ASCII TABLE HERE]
 
-`fromCharCode()` gives the printable letter for each ASCII code.
+Addressing individual characters
 
-Allowing you to type:
 ```javascript
-String.fromCharCode("your name".charCodeAt(1))
+alphabet.charCodeAt(1);
+alphabet.indexAt("a");
 ```
-and
+
+`for ()` iterates over all the characters in the string;   
+`in` gives the index of the character in the string;
+`of` gives the character in the string.
+
+### we will use all of these in our coding
+
+## 3. Shifting characters
+
+Knowing the value of the index of a letter in a string allows you to shift the letters as we need to in our cryptography 
+
 ```javascript
-String.fromCharCode("your name".charCodeAt(1)+3)
+for (letterChar of alphabet) console.log(letterChar);
 ```
-To shift the value a little.
 
-## 2. Strings of Letters
+```javascript
+for letterIndex in alphabet) console.log(alphabet[letterIndex]);
+```
 
+```javascript
+for letter in alphabet) console.log(alphabet[(letter+shift)%alphabet.length)])
+```
+### Remember: `%` means that when we shift our characters we go back to the beginning ie `z` goes back to `a`.
