@@ -162,10 +162,15 @@ function handleVigenere() {
   outputMessage = encodeVignere(inputMessage, vigenereKey)
   outputText.text(outputMessage);
 }
+```
 
+```javascript
+// encoding functionality
 function encodeVignere(phrase, keyPhrase) {
   let ret = '';
   keyIndex = 0;
+
+console.log(keyPhrase[keyIndex]);
 
   for (letter of phrase) {
     ret +=

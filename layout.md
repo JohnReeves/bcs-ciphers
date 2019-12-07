@@ -32,3 +32,11 @@ Run the code to see the two text boxes and two buttons to control the encoding a
 ### The next worksheet shows you how to improve the layout and add some colour.
 
 Before you move on try adding a title and some more buttons ready for the vigenere cipher and the book cipher.
+
+Try adding 5 new things:   
+* textarea for the Vigenere key .   
+* a button to remove spaces .   
+* a button to encode using the Vigenere cipher .  
+* I like Morse code but you might like something else :-) .  
+
+.

@@ -68,7 +68,7 @@ function handleVigenere() {
   outputText.text(outputMessage);
 }
 
-// encode / decode functions
+// steps over the input phrase ignoring spaces
 function handleSpaces(phrase) {
   let ret = '';
   let space = " ";
@@ -80,52 +80,35 @@ function handleSpaces(phrase) {
 }
 
 function encodeCaesar(phrase, shift) {
-  /**
-   *  Encode the Caesar Cipher by shifting
-   *   each character by a fixed amount 
-  */
-  var ret = '';
-
+  let ret = '';
+ 
   for (letter of phrase) {
-    ret += String.fromCharCode(letter.charCodeAt(letter) + shift);
-  }
-  return ret;
-}
-
-function decodeCaesar(phrase, shift) {
-  /**
-   *  Decode the Caesar Cipher by shifting
-   *  by shifting each character back again
-   *  by the same amount
-  */
-  var ret = '';
-
-  for (letter of phrase) {
-    ret += String.fromCharCode(letter.charCodeAt(letter) - shift);
-  }
+    ret +=
+    alphabet.charAt((
+      alphabet.indexOf(letter)+
+      shift)%
+      alphabet.length
+      );  }
   return ret;
 }
 
 function encodeVignere(phrase, keyPhrase) {
-  /**
-   *  Encode the Vignere Cipher
-   *  by shifting each character in yourPhrase
-   *  by the corresponding character in the 
-   *  repeating key
-  */
-  var ret = '';
+  let ret = '';
   keyIndex = 0;
 
   for (letter of phrase) {
-    // Input message in CAPITALS
-    // we want A as the first letter of the alphabet,
-    // A is ASCII 65, so subtract 65 from each charCodeAt in the key
-    ret += String.fromCharCode(letter.charCodeAt(letter) + keyPhrase.charCodeAt(keyIndex) - 65);
-
-    if (keyIndex == keyPhrase.length - 1)
+    ret +=
+    alphabet.charAt((
+      alphabet.indexOf(letter)+
+      alphabet.indexOf(keyPhrase[keyIndex]))%
+      alphabet.length
+      );
+ 
+  if (keyIndex == (keyPhrase.length - 1))
       keyIndex = 0;
     else
       keyIndex++;
   }
+
   return ret;
 }
