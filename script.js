@@ -1,20 +1,40 @@
-alphabet="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let alphabet="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-var shift = 0;
-var vigenereKey = "abc"; // thank you Simon Buist
+let morse_code =
+{
+  "a": ".-", "b": "-...", "c": "-.-.",
+  "d": "-..", "e": ".", "f": "..-.",
+  "g": "--.", "h": "....", "i": "..",
+  "j": ".---", "k": "-.-", "l": ".-..",
+  "m": "--", "n": "-.", "o": "---",
+  "p": ".--.", "q": "--.-", "r": ".-.",
+  "s": "...", "t": "-", "u": "..-",
+  "v": "...-", "w": ".--", "x": "-..-",
+  "y": "-.--", "z": "--..", "1": ".----",
+  "2": "..---", "3": "...--", "4": "....-",
+  "5": ".....", "6": "-....", "7": "--...",
+  "8": "---..", "9": "----.", "0": "-----"
+};
 
-var inputText = $("#input");
-var vigenereText = $("#vigenereKey");
-var outputText = $("#output");
+let shift = 0;
+let vigenereKey = "abc";
 
-var inputMessage = $("#input").val();
-var vigenereKey = $("#vigenereKey").val();
-var outputMessage = $("#output").val();
+let inputText = $("#input");
+let vigenereText = $("#vigenereKey");
+let outputText = $("#output");
 
-var shiftUp = $("#shiftUp");
-var shiftDown = $("#shiftDown");
-var vigenereEncode = $("#vigenereEncode");
-var removeSpaces = $("#spaces");
+let inputMessage = $("#input").val();
+let vigenereKey = $("#vigenereKey").val();
+let outputMessage = $("#output").val();
+
+let shiftUp = $("#shiftUp");
+let shiftDown = $("#shiftDown");
+
+let vigenereEncode = $("#vigenereEncode");
+let removeSpaces = $("#spaces");
+
+let morseCode = $("#morse");
+let soundCode = $("#dih_dah");
 
 // TODO: design an output space for candidate deciphering
 // TODO: verify deciphering with a standard message
@@ -58,6 +78,14 @@ removeSpaces.click(function () {
   inputMessage = outputMessage;
 });
 
+morseCode.click(function () {
+  handleMorse();
+});
+
+soundCode.click(function () {
+  handleMorse();
+});
+
 function handleMessage() {
   outputMessage = encodeCaesar(inputMessage, shift)
   outputText.text(outputMessage);
@@ -65,6 +93,11 @@ function handleMessage() {
 
 function handleVigenere() {
   outputMessage = encodeVignere(inputMessage, vigenereKey)
+  outputText.text(outputMessage);
+}
+
+function handleMorse() {
+  outputMessage = encodeMorse(inputMessage)
   outputText.text(outputMessage);
 }
 
@@ -112,3 +145,17 @@ function encodeVignere(phrase, keyPhrase) {
 
   return ret;
 }
+
+function encodeMorse(message) {
+  let ret = '';
+  let space = " ";
+
+  for (letter of message.toLowerCase()) {
+    if (letter != space)
+      ret += morse_code[letter]+" "
+    else
+      ret += "   "
+  }
+  return ret;
+}
+
