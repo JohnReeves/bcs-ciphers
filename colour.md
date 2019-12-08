@@ -1,16 +1,18 @@
 # Ciphr-Solvr: Your cipher solver
  
-## 1. Improving the layout with CSS 
+In this worksheet we will use CSS to improve the layout of our basic HTML form. 
 
-CSS is a programming language used to make HTML cool and stylish, *and* to make things move. 
+`CSS` is a programming language used to make HTML cool and stylish, *and* to make things move. 
 
-We will use CSS to line up the textboxes and buttons on the form.
+We will use it to line up the textboxes and buttons on the form.
 
-In the style.css file in repl.it or in the css box in jsfiddle:
+The tasks in this worksheet need to go in the `style.css` file in repl.it or in the `CSS` box in jsfiddle:
 
-## 2. Fabulous Forms
+`Pro-Tip` Use the [Material Design colours](https://material.io/design/color/) to find your favourite colours, and use the Material Design styling rules to make your cipher tools beautiful.
 
-Format the form with the CSS below.
+## Task 1. Fabulous Forms
+
+Format the layout and colours of your Ciphr-Solvr form with the CSS below.
 
 ```css
 form {
@@ -27,11 +29,11 @@ form div + div {
 }
 ```
 
-There are more options you can use to make the form exactly as you like it.
+`Pro-Tip` Experiment with other options you can use to make the form exactly as you like it.
 
-## 3. Tremendous Textboxes
+## Task 2. Tremendous Textboxes
 
-use the CSS below to choose the font for the labels and line up the text with the boxes.
+Choose the label fonts and line up the text with the boxes using the CSS below:
 
 ```css
 label {
@@ -53,7 +55,7 @@ label {
 
 I like Roboto but you can chose anything you like.
 
-## 4. Frenetic Fonts
+## Task 3. Frenetic Fonts
 
 These show how to define your own styling tags.
 
@@ -74,9 +76,11 @@ These show how to define your own styling tags.
 
 You can take full control of text styling to make beautiful banners.
 
-## 5. Incredible Inputs
+`Note` Add some svg text with ```class="Rrrrr"``` to see what happens :-)
 
-These CSS lines make the input boxes a nice size and colour.
+## Task 4. Incredible Inputs
+
+Make the input boxes a nice size and colour with these CSS lines:
 
 ```css
 input, 
@@ -96,7 +100,7 @@ textarea:focus {
 
 Take some time to play around to find out what you can control.
 
-## 6. Bountiful Buttons
+## Task 5. Bountiful Buttons
 
 Buttons need round corners and colours to encourage you to press them.
 
@@ -122,10 +126,12 @@ button {
 
 Find out what you can do with them!
 
-## 7. Colour me beautiful
+## Task 6. Colour me beautiful
 
 Replace my horrible colours with your favourites from the [Material Design colours](https://material.io/design/color/)
 
 Use the Material Design styling rules to make your cipher tools beautiful.
+
+### The next worksheet shows you how to link the text boxes and buttons, and add the cipher functions, with JavaScript.
 
 .
