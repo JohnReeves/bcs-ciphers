@@ -17,7 +17,7 @@ Once you have a *working* structure (a MVP) you can extend it by:
 * making the form even more beautiful    
 * making it robust against people doing silly or dangerous things.
 
-`Pro-Tip` Go one step at a time, `test` the added feature works, and share your ideas :-)
+`Pro-Tip` Go one step at a time, test the added feature works, and share your ideas :-)
 
 ## Task 1. Create a skeleton HTML page    
 
@@ -35,6 +35,7 @@ A basic index.html page looks like this:
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+    <!-- Form goes here -->
     <script src="script.js"></script>
   </body>
 </html>
@@ -44,7 +45,7 @@ A basic index.html page looks like this:
 
 Some online tools (eg repl.it) will show you this template; other online tools (eg jsfiddle.net, codepen.io) build the template without showing you.
 
-Start a new (repl.it)[https://repl.it/] or jsfiddle.net with HTML, css & javascript.
+Start a new [repl.it](https://repl.it/) or [jsfiddle.net](https://jsfiddle.net/)` with HTML, css & javascript.
 
 ## Task 2. Create a form in HTML
 
@@ -70,7 +71,8 @@ In the `body` of your repl.it index.html or in the jsfiddle HTML box:
 
 ```
 
-Run the code to see the two text boxes and two buttons to control the encoding and decoding.
+`Run` the code to see the two text boxes and two buttons to control the encoding and decoding.
+`Save` your work! Repl.it and codepen.io save automatically; jsfiddle does *not*
 
 In later worksheets we will make the form pretty with CSS and make the form work with JavaScript.
 
@@ -86,6 +88,6 @@ Try adding 5 new things:
 * a button to encode using the Vigenere cipher .  
 * I like Morse code but you might like something else :-) .  
 
-### The next worksheet shows you how to improve the layout and add colour.
+### The next worksheet shows you how to improve the layout and add colour with CSS.
 
 .
