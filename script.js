@@ -81,9 +81,12 @@ morseCode.click(function () {
   handleMorse();
 });
 
+var audioUrl = 'http://www.realmofdarkness.net/audio/vg/sf/sf2/perfect.mp3';
+
 soundCode.click(function () {
   handleMorse();
 });
+
 
 function handleMessage() {
   outputMessage = encodeCaesar(inputMessage, shift)
@@ -164,4 +167,8 @@ function beep() {
   snd.play();
 }
 
+function boop(){
+    new Audio(audioUrl).play()
+
+}
 //setInterval(beep, 5000);
