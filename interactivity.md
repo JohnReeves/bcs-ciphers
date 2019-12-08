@@ -1,15 +1,18 @@
 # Ciphr-Solvr: Your cipher solver
- 
-## 1. Making it work with JavaScript 
 
-To change the plain text to cipher text we need to know how to:
-* input and output text .  
-* read text and change the letters .  
-* join the HTML form to the JavaScript funcitons .  
 
-It will also be super-helpful to give feedback on the screen to let us know what is happending.
+In this worksheet we will use JavaScript to make our stylish HTML form work. 
 
-## 2. Input and Output Text
+`JavaScript` is a programming language used to make HTML interactive and responsive, *and* to make things move. 
+
+We will use JavaScript to change the plain text to cipher text by:
+* inputing and outputing text .  
+* reading text inputs and changing each letter .  
+* making the button call JavaScript functions .  
+
+The tasks in this worksheet need to go in the `style.css` file in repl.it or in the `CSS` box in jsfiddle:
+
+## Task 1. Input and Output Text
 
 `JQuery` is included as a package in repl.it and a library in jsfiddle to help input and output text, and to link up the buttons.
 
@@ -31,19 +34,17 @@ inputText.change(function () {
 });
 
 ```
+`let` declares a JavaScript variable   
+`$("#   ")` is JQuery linking the HTML and JavaScript code    
+`.val()` is a function to accesses the `Textarea`'s text   
+`.change()` detects changes to the text in the text box
+`.text()` displays new text in text box   
 
-`.val()` is a function to accesses the `Textarea`'s text.
+`Pro-Tip` Explore what your new JavaScript objects can do by typing a '.' after the object and looking at all its built in functions.
 
-## 3. Reading Text and Changing Letters
+## Task 2. Reading Text and Changing Letters
 
-JavaScript can step over each letter in a string using: 
-
-`for ()` iterates over all the characters in the string   
-`in` gives the index of the character in the string   
-`of` gives the character in the string   
-`%` means that when we shift our characters we go back to the beginning ie `z` goes back to `a` .  
-
-Copy the code to shift the letters in the `textarea` text as we need to in our cryptography
+JavaScript can step over each letter in the `textarea` and print the results to the 'console'.
 
 ```javascript
 // letters of the alphabet
@@ -80,7 +81,14 @@ shift=5;
 outputText.text(ret);
 ```
 
-## 4. Joining the HTML to the JavaScript
+`for ()` iterates over all the characters in the string   
+`in` gives the index of the character in the string   
+`of` gives the character in the string   
+`%` means that when we shift our characters we go back to the beginning ie `z` goes back to `a` .  
+
+`Pro-Tip` console.log() is your friend to show you what is happening inside your program.
+
+## Task 3. Joining the HTML to the JavaScript
 
 The code below links the shift up and shift down buttons to the JavaScript code.
 
@@ -126,7 +134,7 @@ function encodeCaesar(phrase, shift) {
 ```
 Remember encoding and decoding the Caesar are just opposites of eachother, the same as shifting up and shifting down.
 
-## 5. Extending your Ciphr-Solvr
+## Task 4. Extending your Ciphr-Solvr
 
 Can you add the HTML and JavaScript to add these functions:
 
