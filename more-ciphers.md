@@ -15,13 +15,15 @@ Now you can:
 * make it robust against people doing silly things
 * find better ways of coding html, css & javascript
 
-`Pro-Tip` Don't add everything at once and share your ideas :-)
+`Pro-Tip` Don't add everything at once, check all the time using form feedback and console.logging, and share your ideas :-)
 
 ## 2. More ciphers
 
 ### Morse code
 
-Morse code replacing each letter with a `dot` and `dash` sequence so that the words can be keys in by a human and transmitted down a cable.
+The Morse Code functionality shows you how to use `JSON` to hold your alphabet.
+
+Morse code replaces each letter with a `dot` and `dash` sequence so that the words can be keys in by a human and transmitted down a cable.
 
 ```javascript
 let morse_code =
@@ -58,6 +60,10 @@ function encodeMorse(message) {
 }
 ```
 
+Morse Code is `really` interesting to learn about :-)
+
+`Pro-Tip` JSON can be used to make *all* your cipher functions easier to understand and code.
+
 ### dih-dah code
 
 As a final step, read through the morse sequence and convert the `spaces`, `dots` and `dashes` to a sound.
@@ -80,6 +86,44 @@ setInterval(beep, 5000);
 ### Substitution cipher
 
 The Morse Code shows you how to do it :-)
+
+i) your JSON alphabet with a shuffled correspondence
+
+```javascript
+let abc_code =
+{
+  "a": "a", "b": "b", "c": "c",
+  "d": "d", "e": "e", "f": "f",
+  "g": "g", "h": "h", "i": "i",
+  "j": "j", "k": "k", "l": "m",
+  "m": "m", "n": "n", "o": "o",
+  "p": "p", "q": "q", "r": "r",
+  "s": "s", "t": "t", "u": "u",
+  "v": "v", "w": "w", "x": "x",
+  "y": "y", "z": "z", "1": "1",
+  "2": "2", "3": "3", "4": "4",
+  "5": "5", "6": "6", "7": "7",
+  "8": "8", "9": "9.", "0": "0"
+};
+```
+
+ii) translating your message
+
+```javascript
+function encode(message) {
+  let ret = '';
+  let space = " ";
+
+  for (letter of message.toLowerCase()) {
+    if (letter != space)
+      ret += abc_code[letter]
+    else
+      ret += "   "
+  }
+  return ret;
+}
+```
+
 
 ### Affine cipher
 
