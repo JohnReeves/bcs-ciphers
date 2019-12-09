@@ -206,4 +206,6 @@ function encodeVignere(phrase, keyPhrase) {
 
 `Pro-tip` Use `console.log()` to find out what is happening inside your code.
 
-### Can you add more Ciphers?
+### The next worksheet shows you more cipher functions and better ways of coding.
+
+.
