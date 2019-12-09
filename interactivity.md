@@ -155,6 +155,10 @@ function handleSpaces(phrase) {
 
 ### vigenere cipher
 
+The Vigenere cipher uses a key word to provide the shift value.
+
+i) you need to add the text box to input the key.
+
 ```javascript
 // event handler to detect new vigenere key
 vigenereText.change(function () {
@@ -172,13 +176,14 @@ function handleVigenere() {
 }
 ```
 
+ii) you need a modified Caesar cipher to shift for each letter in the key word.
+
 ```javascript
-// encoding functionality
 function encodeVignere(phrase, keyPhrase) {
   let ret = '';
   keyIndex = 0;
 
-console.log(keyPhrase[keyIndex]);
+  console.log(keyPhrase[keyIndex]);
 
   for (letter of phrase) {
     ret +=
@@ -199,4 +204,6 @@ console.log(keyPhrase[keyIndex]);
 
 ```
 
-Can you add more Ciphers?
+`Pro-tip` Use `console.log()` to find out what is happening inside your code.
+
+### Can you add more Ciphers?
