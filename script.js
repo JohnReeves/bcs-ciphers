@@ -1,4 +1,20 @@
-let alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let alphabet="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
+
+let abc_code =
+{
+  "a": "a", "b": "b", "c": "c",
+  "d": "d", "e": "e", "f": "f",
+  "g": "g", "h": "h", "i": "i",
+  "j": "j", "k": "k", "l": "l",
+  "m": "m", "n": "n", "o": "o",
+  "p": "p", "q": "q", "r": "r",
+  "s": "s", "t": "t", "u": "u",
+  "v": "v", "w": "w", "x": "x",
+  "y": "y", "z": "z", "1": "1",
+  "2": "2", "3": "3", "4": "4",
+  "5": "5", "6": "6", "7": "7",
+  "8": "8", "9": "9", "0": "0"
+};
 
 let morse_code =
 {
@@ -82,6 +98,7 @@ morseCode.click(function () {
 });
 
 var audioUrl = 'http://www.realmofdarkness.net/audio/vg/sf/sf2/perfect.mp3';
+//var audioUrl = 'http://www.realmofdarkness.net/wp-content/audio/vg/sonic/shadow/shadow/alright.mp3';
 
 soundCode.click(function () {
   handleMorse();
@@ -99,7 +116,7 @@ function handleVigenere() {
 }
 
 function handleMorse() {
-  outputMessage = encodeMorse(inputMessage)
+  outputMessage = encode(morse_code, inputMessage)
   outputText.text(outputMessage);
   beep();
 }
@@ -149,13 +166,13 @@ function encodeVignere(phrase, keyPhrase) {
   return ret;
 }
 
-function encodeMorse(message) {
+function encode(alpha_code, message) {
   let ret = '';
   let space = " ";
 
   for (letter of message.toLowerCase()) {
     if (letter != space)
-      ret += morse_code[letter] + " "
+      ret += alpha_code[letter] + " "
     else
       ret += "   "
   }
