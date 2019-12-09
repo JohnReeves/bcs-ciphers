@@ -12,7 +12,8 @@ You have learned how to:
 Now you can:
 * add more ciphers and deciphering tools    
 * make the form even more beautiful    
-* make it robust against people doing silly things.
+* make it robust against people doing silly things
+* find better ways of coding html, css & javascript
 
 `Pro-Tip` Don't add everything at once and share your ideas :-)
 
