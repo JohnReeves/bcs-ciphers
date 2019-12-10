@@ -155,7 +155,12 @@ function affine_alphabet(a,b) {
 
 
 ```
-
+/* gwr station login
+Er!c!dl3
+monty python
+flying circus
+rabbit
+*/
 
 ### Book cipher
 

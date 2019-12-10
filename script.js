@@ -32,6 +32,22 @@ let morse_code =
   "8": "---..", "9": "----.", "0": "-----"
 };
 
+let substitute_code =
+{
+  "a": "z", "b": "y", "c": "x",
+  "d": "w", "e": "v", "f": "u",
+  "g": "s", "h": "s", "i": "r",
+  "j": "q", "k": "p", "l": "o",
+  "m": "n", "n": "m", "o": "l",
+  "p": "k", "q": "j", "r": "i",
+  "s": "h", "t": "g", "u": "f",
+  "v": "e", "w": "d", "x": "c",
+  "y": "b", "z": "a", "1": "1",
+  "2": "2", "3": "3", "4": "4",
+  "5": "5", "6": "6", "7": "7",
+  "8": "8", "9": "9.", "0": "0"
+};
+
 let shift = 0;
 
 let inputText = $("#input");
@@ -50,6 +66,9 @@ let removeSpaces = $("#spaces");
 
 let morseCode = $("#morse");
 let soundCode = $("#dih_dah");
+
+let affineCode = $("#affine");
+let randomCode = $("#random");
 
 // TODO: design an output space for candidate deciphering
 // TODO: verify deciphering with a standard message
@@ -104,6 +123,15 @@ soundCode.click(function () {
   handleMorse();
 });
 
+// probably put these in one function
+// with the caesar cipher
+affineCode.click(function () {
+  handleAffine();
+});
+
+randomCode.click(function () {
+  handleRandom();
+});
 
 function handleMessage() {
   outputMessage = encodeCaesar(inputMessage, shift)
