@@ -109,7 +109,7 @@ let abc_code =
 
 This alphabetic test is not particularly random.
 
-See if you can use the JavaScript `math.random` to make a really random alphabet.
+See if you can use the JavaScript `Math.random` to make a really random alphabet.
 
 ii) translating your message
 
@@ -131,7 +131,13 @@ function encode(message) {
 
 ### Affine cipher
 
+`Affine` is a maths word meaning a `linear transformation`. You are already familiar with this in your multiplication tables, arithmetic sequences and straight line graphs.
+
+Each letter is enciphered with the function (ax + b) mod 26, where b is the magnitude of the shift.
+
 ### Book cipher
+
+Simply use a page of a book to find the cipher shifting key.
 
 ### Public key
 
