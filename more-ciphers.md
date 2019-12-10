@@ -133,9 +133,29 @@ function encode(message) {
 
 `Affine` is a maths word you are already know with multiplication tables, sequences and graphs.
 
-Each letter is enciphered with the function `(ax + b) % 26`, where b is the magnitude of the shift.
+Each letter is shifted using the function `(ax + b) % 26`.
 
-The Caesar cipher is an Affine cipher where `a` is 0, and `b` is the Caesar shift.
+In fact, the Caesar cipher is an Affine cipher where:
+* `a` is 0 .  
+* `b` is the Caesar shift . 
+* `% 26` is to ensure that our index gets a valid letter .   
+
+The code below uses the Affine function to give the letters in the substitution alphabet.
+
+```javascript
+function affine_alphabet(a,b) {
+  // the affine substitution alphabet is global
+  //
+  for (letter in affine_alphabet) {
+      affine_alphabet[letter] =
+        ((a * letter.index() + 
+        b )%
+        26 )
+}
+
+
+```
+
 
 ### Book cipher
 
