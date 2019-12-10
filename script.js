@@ -149,6 +149,16 @@ function handleMorse() {
   beep();
 }
 
+function handleAffine() {
+  outputMessage = encodeAffine(abc_code, inputMessage)
+  outputText.text(outputMessage);
+}
+
+function handleRandom() {
+  outputMessage = encodeRandom(substitute_code, inputMessage)
+  outputText.text(outputMessage);
+}
+
 // steps over the input phrase ignoring spaces
 function handleSpaces(phrase) {
   let ret = '';
@@ -203,6 +213,30 @@ function encode(alpha_code, message) {
       ret += alpha_code[letter] + " "
     else
       ret += "   "
+  }
+  return ret;
+}
+
+function encodeAffine(alpha_code, message) {
+  let ret = '';
+  let space = " ";
+
+  for (letter of message.toLowerCase()) {
+
+      ret += alpha_code[letter] + " "
+
+  }
+  return ret;
+}
+
+function encodeRandom(alpha_code, message) {
+  let ret = '';
+  let space = " ";
+
+  for (letter of message.toLowerCase()) {
+
+      ret += alpha_code[letter] + " "
+
   }
   return ret;
 }
