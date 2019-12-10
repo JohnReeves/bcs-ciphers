@@ -80,7 +80,7 @@ function beep() {
   snd.play();
 }
 
-setInterval(beep, 5000);
+// setInterval(beep, 5000);
 ```
 
 ### Substitution cipher
@@ -92,20 +92,24 @@ i) your JSON alphabet with a shuffled correspondence
 ```javascript
 let abc_code =
 {
-  "a": "a", "b": "b", "c": "c",
-  "d": "d", "e": "e", "f": "f",
-  "g": "g", "h": "h", "i": "i",
-  "j": "j", "k": "k", "l": "m",
-  "m": "m", "n": "n", "o": "o",
-  "p": "p", "q": "q", "r": "r",
-  "s": "s", "t": "t", "u": "u",
-  "v": "v", "w": "w", "x": "x",
-  "y": "y", "z": "z", "1": "1",
+  "a": "z", "b": "y", "c": "x",
+  "d": "w", "e": "v", "f": "u",
+  "g": "s", "h": "s", "i": "r",
+  "j": "q", "k": "p", "l": "o",
+  "m": "n", "n": "m", "o": "l",
+  "p": "k", "q": "j", "r": "i",
+  "s": "h", "t": "g", "u": "f",
+  "v": "e", "w": "d", "x": "c",
+  "y": "b", "z": "a", "1": "1",
   "2": "2", "3": "3", "4": "4",
   "5": "5", "6": "6", "7": "7",
   "8": "8", "9": "9.", "0": "0"
 };
 ```
+
+This alphabetic test is not particularly random.
+
+See if you can use the JavaScript `math.random` to make a really random alphabet.
 
 ii) translating your message
 
