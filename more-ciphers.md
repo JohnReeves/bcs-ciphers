@@ -64,9 +64,9 @@ Morse Code is `really` interesting to learn about :-)
 
 `Pro-Tip` JSON can be used to make *all* your cipher functions easier to understand and code.
 
-### dih-dah code
+### Dih-Dah Code
 
-As a final step, read through the morse sequence and convert the `spaces`, `dots` and `dashes` to a sound.
+As a final step, read through the Morse code sequence of `spaces`, `dots` and `dashes`, and convert them to a sound.
 
 The Mozilla Developer Network can help you use:
 * a sound library   
@@ -131,13 +131,15 @@ function encode(message) {
 
 ### Affine cipher
 
-`Affine` is a maths word meaning a `linear transformation`. You are already familiar with this in your multiplication tables, arithmetic sequences and straight line graphs.
+`Affine` is a maths word you are already know with multiplication tables, sequences and graphs.
 
-Each letter is enciphered with the function (ax + b) mod 26, where b is the magnitude of the shift.
+Each letter is enciphered with the function `(ax + b) % 26`, where b is the magnitude of the shift.
+
+The Caesar cipher is an Affine cipher where `a` is 0, and `b` is the Caesar shift.
 
 ### Book cipher
 
-Simply use a page of a book to find the cipher shifting key.
+Simply use a page of a book (a large piece of text) to find the cipher shifting key.
 
 ### Public key
 
@@ -146,15 +148,14 @@ Simply use a page of a book to find the cipher shifting key.
 
 ### Letter Frequency charts
 
+The frequency of single letters and letters in combination is widely used in word games, in electronic communication, in linguistics and in deciphering codes.
+
+The letter frequency in speech and written text is well know, so comparing numbers of letters in the coded message can give a clue for translation.
+
 ### Dictionary Search
 
-### Letter Pairs and Triples
-
-### Collocation
 
 ## 4. Even more beautiful
-
-## 5. Robustness
 
 
 
