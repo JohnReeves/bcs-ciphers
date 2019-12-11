@@ -166,8 +166,6 @@ rabbit
 
 Simply use a page of a book (a large piece of text) to find the cipher shifting key.
 
-### Public key
-
 
 ## 3. Deciphering tools
 
@@ -181,6 +179,21 @@ The letter frequency in speech and written text is well know, so comparing numbe
 
 
 ## 4. Even more beautiful
+
+Add a banner to your Ciphr-Solvr and name it for yourself :-)
+
+The banner I made uses SVG text, made beautiful by the CSS styling we added earlier.
+
+```javascript
+<svg width="600" height="100">
+		<text x="20" y="30" class="heavy">bcs-</text>
+		<text id="cat" x="80" y="30" class="heavy">ciphers</text>
+		<text x="55" y="60" class="heavy">Caesar</text>
+		<text id="grumpy" x="150" y="60" class="Rrrrr">Shift!</text>
+</svg>
+```
+
+### Choose your own text!
 
 
 
