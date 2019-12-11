@@ -143,18 +143,22 @@ In fact, the Caesar cipher is an Affine cipher where:
 The code below uses the Affine function to give the letters in the substitution alphabet.
 
 ```javascript
-function affine_alphabet(a,b) {
-  // the affine substitution alphabet is global
-  //
-  for (letter in affine_alphabet) {
-      affine_alphabet[letter] =
-        ((a * letter.index() + 
-        b )%
-        26 )
+function handleAffine() {
+  a = 5;
+  b = 2;
+
+  // generate the new affine alphabet
+  for (letter in alphabet) {
+    index = (a * letter + b) % alphabet.length
+    abc_code[alphabet.charAt(letter)] = 
+    alphabet.charAt(index);
+  }
+
+  outputMessage = encodeAffine(abc_code, inputMessage)
+  outputText.text(outputMessage);
 }
-
-
 ```
+
 /* gwr station login
 Er!c!dl3
 monty python
@@ -174,6 +178,8 @@ Simply use a page of a book (a large piece of text) to find the cipher shifting 
 The frequency of single letters and letters in combination is widely used in word games, in electronic communication, in linguistics and in deciphering codes.
 
 The letter frequency in speech and written text is well know, so comparing numbers of letters in the coded message can give a clue for translation.
+
+![letter frequency](English_letter_frequency.svg)
 
 ### Dictionary Search
 

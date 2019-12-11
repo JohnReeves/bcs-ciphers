@@ -36,7 +36,7 @@ let substitute_code =
 {
   "a": "z", "b": "y", "c": "x",
   "d": "w", "e": "v", "f": "u",
-  "g": "s", "h": "s", "i": "r",
+  "g": "t", "h": "s", "i": "r",
   "j": "q", "k": "p", "l": "o",
   "m": "n", "n": "m", "o": "l",
   "p": "k", "q": "j", "r": "i",
@@ -150,6 +150,15 @@ function handleMorse() {
 }
 
 function handleAffine() {
+  a = 5;
+  b = 2;
+
+  for (letter in alphabet) {
+    index = (a * letter + b) % alphabet.length
+    abc_code[alphabet.charAt(letter)] = 
+    alphabet.charAt(index);
+  }
+
   outputMessage = encodeAffine(abc_code, inputMessage)
   outputText.text(outputMessage);
 }
@@ -217,26 +226,20 @@ function encode(alpha_code, message) {
   return ret;
 }
 
-function encodeAffine(alpha_code, message) {
+function encodeAffine(affine_code, message) {
   let ret = '';
-  let space = " ";
 
   for (letter of message.toLowerCase()) {
-
-      ret += alpha_code[letter] + " "
-
+      ret += affine_code[letter]
   }
   return ret;
 }
 
-function encodeRandom(alpha_code, message) {
+function encodeRandom(random_code, message) {
   let ret = '';
-  let space = " ";
 
   for (letter of message.toLowerCase()) {
-
-      ret += alpha_code[letter] + " "
-
+      ret += random_code[letter]
   }
   return ret;
 }
