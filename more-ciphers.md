@@ -184,6 +184,9 @@ The letter frequency in speech and written text is well know, so comparing numbe
 ### Dictionary Search
 
 
+### Reversiing the text
+
+
 ## 4. Even more beautiful
 
 Add a banner to your Ciphr-Solvr and name it for yourself :-)
