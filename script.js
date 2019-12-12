@@ -189,13 +189,9 @@ function handleSpaces(phrase) {
 }
 
 function handleReverse(phrase) {
-  let ret = ''*phrase.length-1;
-  reverseIndex = phrase.length - 1;
+  let ret = '';
 
-  for (letter of phrase) {
-   ret[reverseIndex] += letter;
-   reverseIndex -= 1;
-  }
+  ret = phrase.split("").reverse().join("");
   return ret;
 }
 
