@@ -63,6 +63,7 @@ let shiftDown = $("#shiftDown");
 
 let vigenereEncode = $("#vigenereEncode");
 let removeSpaces = $("#spaces");
+let reversePhrase = $("#reverse");
 
 let morseCode = $("#morse");
 let soundCode = $("#dih_dah");
@@ -108,6 +109,12 @@ vigenereEncode.click(function () {
 
 removeSpaces.click(function () {
   outputMessage = handleSpaces(inputMessage)
+  outputText.text(outputMessage);
+  inputMessage = outputMessage;
+});
+
+reversePhrase.click(function () {
+  outputMessage = handleReverse(inputMessage)
   outputText.text(outputMessage);
   inputMessage = outputMessage;
 });
@@ -177,6 +184,17 @@ function handleSpaces(phrase) {
 
   for (letter of phrase) {
     if (letter != space) ret += letter;
+  }
+  return ret;
+}
+
+function handleReverse(phrase) {
+  let ret = ''*phrase.length-1;
+  reverseIndex = phrase.length - 1;
+
+  for (letter of phrase) {
+   ret[reverseIndex] += letter;
+   reverseIndex -= 1;
   }
   return ret;
 }
