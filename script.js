@@ -169,6 +169,8 @@ function handleRandom() {
 }
 
 // steps over the input phrase ignoring spaces
+// try how understandable these are as filter/map/reduce
+// let new_letter = letter.map(letter => letter + shift);
 function handleSpaces(phrase) {
   let ret = '';
   let space = " ";
