@@ -1,4 +1,4 @@
-let alphabet="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
+let alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
 
 let abc_code =
 {
@@ -85,6 +85,20 @@ inputText.change(function () {
   handleMessage();
 });
 
+// event handler to detect new text file
+var openFile = function (event) {
+  var input = event.target;
+
+  var reader = new FileReader();
+  reader.onload = function () {
+    var text = reader.result;
+    var node = document.getElementById('output');
+    node.innerText = text;
+    console.log(reader.result.substring(0, 200));
+  };
+  reader.readAsText(input.files[0]);
+};
+
 // event handler to detect new vigenere key
 vigenereText.change(function () {
   vigenereKey = $("#vigenereKey").val();
@@ -162,8 +176,8 @@ function handleAffine() {
 
   for (letter in alphabet) {
     index = (a * letter + b) % alphabet.length
-    abc_code[alphabet.charAt(letter)] = 
-    alphabet.charAt(index);
+    abc_code[alphabet.charAt(letter)] =
+      alphabet.charAt(index);
   }
 
   outputMessage = encodeAffine(abc_code, inputMessage)
@@ -246,7 +260,7 @@ function encodeAffine(affine_code, message) {
   let ret = '';
 
   for (letter of message.toLowerCase()) {
-      ret += affine_code[letter]
+    ret += affine_code[letter]
   }
   return ret;
 }
@@ -255,7 +269,7 @@ function encodeRandom(random_code, message) {
   let ret = '';
 
   for (letter of message.toLowerCase()) {
-      ret += random_code[letter]
+    ret += random_code[letter]
   }
   return ret;
 }
@@ -265,8 +279,8 @@ function beep() {
   snd.play();
 }
 
-function boop(){
-    new Audio(audioUrl).play()
+function boop() {
+  new Audio(audioUrl).play()
 
 }
 //setInterval(beep, 5000);
