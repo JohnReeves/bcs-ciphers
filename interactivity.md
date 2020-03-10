@@ -10,7 +10,7 @@ We will use JavaScript to change the plain text to cipher text by:
 * reading text inputs and changing each letter .  
 * making the button call JavaScript functions .  
 
-The tasks in this worksheet need to go in the `style.css` file in repl.it or in the `CSS` box in jsfiddle:
+The tasks in this worksheet need to go in the `script.js` file in repl.it or in the `javascript` box in jsfiddle:
 
 ## Task 1. Input and Output Text
 
@@ -204,7 +204,7 @@ function encodeVignere(phrase, keyPhrase) {
 
 ```
 
-`Pro-tip` Use `console.log()` to find out what is happening inside your code.
+`Pro-Tip` Use `console.log()` to find out what is happening inside your code.
 
 ### The next worksheet shows you more cipher functions and better ways of coding.
 
