@@ -76,7 +76,7 @@ In the `body` of your repl.it index.html or in the jsfiddle HTML box:
 
 In later worksheets we will make the form pretty with CSS and make the form work with JavaScript.
 
-`Pro-Top` Engineers make a basic structure because it is a great way of learning, sharing ideas and planning the product development journey.
+`Pro-Tip` Engineers make a basic structure because it is a great way of learning, sharing ideas and planning the product development journey.
 
 ## Task 3. Extend the HTML form with more Ciphr-Solver ideas
 
